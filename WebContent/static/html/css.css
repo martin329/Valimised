@@ -1,0 +1,120 @@
+@charset "utf-8";
+body {
+	background-color: #2e5e79;
+	font: 13px/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif 13px/1.5;
+	font-family:Helvetica;
+}
+
+/*-------------------------
+HEADING - PEALKIRJAD
+-------------------------*/
+h1 {font-size: 28px;}
+h2 {font-size: 23px;}
+h3 {font-size: 21px;}
+h4 {font-size: 19px;}
+h5 {font-size: 17px;}
+h6 {font-size: 15px;}
+
+/*-------------------------
+AVALEHT, AUTENTIMINE
+-------------------------*/
+#sisukast {
+	position:absolute;
+	width:600px;
+	height:600px;
+	z-index:30;
+	top:50%;
+	left:50%;
+	margin:-300px 0 0 -300px;
+	border: 3px solid #204562; 
+  	border-radius: 8px 8px 8px 8px;
+  	-webkit-border-radius: 8px 8px 8px 8px;
+  	-moz-border-radius: 8px 8px 8px 8px;
+	background:#D1DEE4;
+}
+#pealkiri {
+	position:absolute;
+	top:10%;
+	left:15%;
+	right:15%;
+	text-align:center;
+}
+
+/*-------------------------
+AUTENTIMINE
+-------------------------*/
+#sisene_fb {
+	position:absolute;
+	top:35%;
+	left:38%;
+}
+#sisene_fb_p {
+	top:45%;
+	position:absolute;
+	left:22%;
+	right:22%;
+	text-align:center;
+}
+#sisene_autentimata {
+	position:absolute;
+	top:65%;
+	left:32%;
+}
+#sisene_autentimata_p {
+	top:75%;
+	position:absolute;
+	left:22%;
+	right:22%;
+	text-align:center;
+}
+.nupp {
+	background-color:#ededed;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:3px solid #204562;
+	display:inline-block;
+	color:black;
+	font-family:Helvetica;
+	font-size:21px;
+	font-weight:bold;
+	padding:6px 28px;
+	text-decoration:none;
+	/*text-shadow:1px 1px 0px #ffffff;*/
+}.nupp:hover {
+	background-color:#315C7C;
+}.nupp:active {
+	position:relative;
+	top:1px;
+}
+.loginform{
+	font-family:Helvetica;
+	margin:35% auto auto auto;
+	width:50%;
+	background-color:#ededed;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	padding:10px;
+	border:3px solid #204562;
+}
+#fb_sisse{
+	margin-left:auto;
+	margin-right:auto;
+	width:172px;
+	margin-top:5%
+}
+#fb_tagasi{
+	margin-left:auto;
+	margin-right:auto;
+	width:135px;
+	margin-top:15%;
+}
+
+/*-------------------------
+Erakonna järgi
+-------------------------*/
+
+#erakond_container{
+	
+}
