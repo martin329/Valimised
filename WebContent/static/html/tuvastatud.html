@@ -1,76 +1,97 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>E-valimised</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tuvastatud</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>E-valimised</h1>
-<div id="menu">
-<div id="menu1">
-<button onclick="location.href='tuvastatud.html'">Hääletamistulemused erakondade järgi</button> <br>
-<button onclick="location.href='tuvastatudKandidaat.html'">Hääletamistulemused kandidaatide järgi</button>
-</div>
-<div id="menu2">
-<button onclick="location.href='kandidaadiksLisamine.html'">Lisa end kandidaadiks</button> <br>
-<button onclick="location.href='haaletamine.html'">Hääleta</button> <br>
-<p>Oled tuvastatud kui:<br>
-Jaan Õunapuu</p>
-<button onclick="location.href='index.html'">Logi välja</button> <br>
-</div>
-</div>
-<div>
-<p>Vali ringkond menüüst või kaardilt</p>
-<select name="Ringkond">
-				<option>Kogu Eesti</option>
-				<option>Haabersti, Põhja-Tallinn, Kristiine</option>
-				<option>Kesklinna, Lasnamäe, Pirita</option>
-				<option>Mustamäe, Nõmme</option>
-				<option>Harjumaa, Raplamaa</option>
-				<option>Läänemaa, Hiiumaa, Saaremaa</option>
-			</select>
-<br>
-<a href="printvaadeErakond.html"><img src="print.png" alt="print" width="30" height="30" /></a>
-<p>Ringkonnas on kokku hääli antud:</p>
-<p>Kogu Eesti<br>22 237</p>
-</div>
-<div>
-<table border="1">
-<tr>
-<th>Erakond.</th>
-<td>Reformierakond</td>
-<td>IRL</td>
-<td>Keskerakond</td>
-<td>SDE</td>
-<td>EKD</td>
-<td>Vene Erakond Eestis</td>
-</tr>
-<tr>
-<th>Häälte arv</th>
-<td>4101</td>
-<td>3022</td>
-<td>1511</td>
-<td>12952</td>
-<td>249</td>
-<td>402</td>
-</tr>
-<tr>
-<th>Häälte protsent</th>
-<td>18%</td>
-<td>13%</td>
-<td>6%</td>
-<td>58%</td>
-<td>2%</td>
-<td>3%</td>
-</tr>
-</table>
-<img src="pie.png" alt="Statistika" />
-<p>Vali valimisringkond</p>
-<p>Valimiseks kliki kaardil</p>
-<img src="map.png" alt="Kaart" />
-</div>
-</body>
+	<div id="sisukast_pohivaade">
+    	<div id="vasak_konteiner">
+        	<h1>E-Valimised</h1>
+            
+            <div id="statistika">
+            	<a href="tuvastatud.html" class="login_nupud">Hääletustulemused erakondade järgi</a><br /><br />
+                <a href="tuvastatudKandidaat.html" class="login_nupud">Hääletustulemused kanditaatide järgi</a>
+            </div>
+            
+            <!--Erinev võrreldes autentimata kasutajana-->
+            <div id="logimise_konteiner">
+            	<div id="haaleta">
+                	<a href="#" class="login_nupud">Lisa end kandidaadiks</a><br />	<br />
+                    <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br /><br />
+                    
+                    <div id="auth_ala">
+                		Oled tuvastatud kui:<br />
+                        Jaan Õunapuu<br /><br /><br />
+                	</div>
+                    <a href="#" class="login_nupud">Logi välja</a>
+                </div>
+            </div>
+        </div>
 
+        <div id="parem_konteiner">
+        	<div id="ulemine_1">
+            	Vali ringkond menüüst või kaardilt:
+				<select name="Ringkond">
+					<option>Kogu Eesti</option>
+					<option>Haabersti, Põhja-Tallinn, Kristiine</option>
+					<option>Kesklinna, Lasnamäe, Pirita</option>
+					<option>Mustamäe, Nõmme</option>
+					<option>Harjumaa, Raplamaa</option>
+					<option>Läänemaa, Hiiumaa, Saaremaa</option>
+				</select>
+            </div>
+            <div id="ulemine_2">
+            	<a href="printvaadeErakond.html"><img src="print.png" alt="print" width="30" height="30" /></a>
+            </div>
+            <div id="ulemine_3">
+            	Ringkonnas on kokku hääli antud:&nbsp;&nbsp;3 702<br />
+				Kogu Eesti:&nbsp;&nbsp;22 237
+            </div><br /><br /><br /><br />
+            
+            <div id="alumine_1">
+            	<table class="table1">
+				<tr>
+					<th>Erakond</th>
+					<td>Reformierakond</td>
+					<td>IRL</td>
+					<td>Keskerakond</td>
+					<td>SDE</td>
+					<td>EKD</td>
+					<td>Vene Erakond Eestis</td>
+				</tr>
+				<tr>
+					<th>Häälte arv</th>
+					<td>4101</td>
+					<td>3022</td>
+					<td>1511</td>
+					<td>12952</td>
+					<td>249</td>
+					<td>402</td>
+				</tr>
+				<tr>
+					<th>&nbsp;Häälte protsent&nbsp;</th>
+					<td>18%</td>
+					<td>13%</td>
+					<td>6%</td>
+					<td>58%</td>
+					<td>2%</td>
+					<td>3%</td>
+				</tr>
+				</table>
+            </div>
+            
+            <div id="sektor">
+            	<img src="pie.png" alt="Statistika" />
+            </div>
+            
+            <div id="kaart">
+            	<img src="map.png" alt="Statistika" />
+            </div>
+        </div>
+        
+    </div>
+</body>
 </html>

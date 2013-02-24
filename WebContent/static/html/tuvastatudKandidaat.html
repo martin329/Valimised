@@ -1,94 +1,157 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+﻿﻿<!DOCTYPE HTML>
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>E-valimised</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tuvastatud</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>E-valimised</h1>
-<div id="menu">
-<div id="menu1">
-<button onclick="location.href='tuvastatud.html'">Hääletamistulemused erakondade järgi</button> <br>
-<button onclick="location.href='tuvastatudKandidaat.html'">Hääletamistulemused kandidaatide järgi</button>
-</div>
-<div id="menu2">
-<button onclick="location.href='kandidaadiksLisamine.html'">Lisa end kandidaadiks</button> <br>
-<button onclick="location.href='haaletamine.html'">Hääleta</button> <br>
-<p>Oled tuvastatud kui:<br>
-Jaan Õunapuu</p>
-<button onclick="location.href='index.html'">Logi välja</button> <br>
-</div>
-</div>
-<div>
-<p>Vali ringkond menüüst või kaardilt</p>
-<select name="Ringkond">
-				<option>Kogu Eesti</option>
-				<option>Haabersti, Põhja-Tallinn, Kristiine</option>
-				<option>Kesklinna, Lasnamäe, Pirita</option>
-				<option>Mustamäe, Nõmme</option>
-				<option>Harjumaa, Raplamaa</option>
-				<option>Läänemaa, Hiiumaa, Saaremaa</option>
-			</select>
-<br>
-<a href="printvaadeKandidaat.html"><img src="print.png" alt="print" width="30" height="30" /></a>
-<p>Ringkonnas on kokku hääli antud:</p>
-<p>Kogu Eesti<br>22 237</p>
-<p>Otsi kandidaati:<input name="Text1" type="text" /><input name="Button1" type="button" value="Otsi" /></p>
-</div>
-<div>
-<table border="1">
-<tr>
-<th>Nr.</th>
-<th>Nimi</th>
-<th>Erakond</th>
-<th>Ringkond</th>
-<th>Hääli</th>
-</tr>
-<tr>
-<td>1</td>
-<td>Toomas Talu</td>
-<td>IRL</td>
-<td>4. Harjumaa ja Raplamaa</td>
-<td>140</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Ants Arupalu</td>
-<td>Keskerakond</td>
-<td>9.Tartumaa ja Jõgevamaa</td>
-<td>124</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Kättlin Kask</td>
-<td>Reformierakond</td>
-<td>11.Põlvamaa, Võrumaa ja Valgamaa</td>
-<td>522</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Kaarel Kajakas</td>
-<td>SDE</td>
-<td>6.Lääne-Virumaa</td>
-<td>953</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Jüri Jalakas</td>
-<td>IRL</td>
-<td>8.Järvamaa ja Viljandimaa</td>
-<td>53</td>
-</tr>
-</table>
-<div>
-<img src="pie2.png" alt="Statistika" />
-<p>Vali valimisringkond</p>
-<p>Valimiseks kliki kaardil</p>
-<img src="map.png" alt="Kaart" />
-</div>
-</div>
-</body>
+	<div id="sisukast_pohivaade">
+    	<div id="vasak_konteiner">
+        	<h1>E-Valimised</h1>
+            
+            <div id="statistika">
+            	<a href="tuvastatud.html" class="login_nupud">Hääletustulemused erakondade järgi</a><br /><br />
+                <a href="tuvastatudKandidaat.html" class="login_nupud">Hääletustulemused kanditaatide järgi</a>
+            </div>
+            
+            <!--Erinev võrreldes autentimata kasutajana-->
+            <div id="logimise_konteiner">
+            	<div id="haaleta">
+                	<a href="#" class="login_nupud">Lisa end kandidaadiks</a><br />	<br />
+                    <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br /><br />
+                    
+                    <div id="auth_ala">
+                		Oled tuvastatud kui:<br />
+                        Jaan Õunapuu<br /><br /><br />
+                	</div>
+                    <a href="#" class="login_nupud">Logi välja</a>
+                </div>
+            </div>
+        </div>
 
+        <div id="parem_konteiner">
+        	<div id="ulemine_1">
+            	Vali ringkond menüüst või kaardilt:<br />
+				<select name="Ringkond">
+					<option>Kogu Eesti</option>
+					<option>Haabersti, Põhja-Tallinn, Kristiine</option>
+					<option>Kesklinna, Lasnamäe, Pirita</option>
+					<option>Mustamäe, Nõmme</option>
+					<option>Harjumaa, Raplamaa</option>
+					<option>Läänemaa, Hiiumaa, Saaremaa</option>
+				</select>
+            </div>
+            <div id="ulemine_2">
+            	<a href="printvaadeErakond.html"><img src="print.png" alt="print" width="30" height="30" /></a>
+            </div>
+            <div id="ulemine_3">
+            	Ringkonnas on kokku hääli antud:&nbsp;3 702<br />
+				Kogu Eesti:&nbsp;22 237
+            </div>
+            
+            <div id="kandidaat_alumine_1">
+            	Otsi kandidaati:<input name="Text1" type="text" /><input name="Button1" type="button" value="Otsi" />
+            </div>
+            
+            <div id="kandidaat_nupud">
+            	<a href="#" class="login_nupud">&nbsp;Nr.&nbsp;</a>
+                <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;Nimi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Erakond&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;Ringkond&nbsp;&nbsp;&nbsp;</a>
+                <a href="#" class="login_nupud">Hääli</a>
+            </div>
+            
+            <div id="statistika_kandidaadid">
+            <table class="table2">
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;Toomas&nbsp;&nbsp;&nbsp;&nbsp;<br />Talu</td>
+					<td>IRL</td>
+					<td>4. Harjumaa ja<br />Raplamaa</td>
+					<td>&nbsp;&nbsp;&nbsp;140&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Ants<br />Arupalu</td>
+					<td>Keskerakond</td>
+					<td>9.Tartumaa ja<br />Jõgevamaa</td>
+					<td>124</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Kättlin<br />Kask</td>
+					<td>&nbsp;&nbsp;Reformierakond&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;11.Põlvamaa, Võrumaa ja&nbsp;&nbsp;<br />Valgamaa</td>
+					<td>522</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Kaarel<br />Kajakas</td>
+					<td>SDE</td>
+					<td>6.Lääne-Virumaa</td>
+					<td>953</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td>Jüri<br />Jalakas</td>
+					<td>IRL</td>
+					<td>8.Järvamaa ja<br />Viljandimaa</td>
+					<td>53</td>
+				</tr>
+			</table>
+            </div>
+            <div id="sektor2">
+            	<img src="pie.png" alt="Statistika" />
+            </div>
+            
+            <div id="kaart2">
+            	<img src="map.png" alt="Statistika" />
+            </div>
+        </div>
+        
+    </div>
+</body>
 </html>
