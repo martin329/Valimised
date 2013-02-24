@@ -1,72 +1,116 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+﻿<!DOCTYPE HTML>
+<html>
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>E-valimised</title>
+<meta charset="utf-8">
+<title>Hääletamine</title>
+<link href="css.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<div>
-<div>
-<h1>Hääleta</h1>
-<p>Vali ringkond kus hääletada:</p>
-<select name="Piirkond">
+
+	<div id="sisukast_pohivaade">
+    	<div id="haaleta_vasak"><br /><br />
+        	<h1>Hääleta</h1>
+            Vali ringkond, kus soovid hääletada:<br />
+            <select name="Piirkond">
 				<option>Haabersti, Põhja-Tallinn, Kristiine</option>
 				<option>Kesklinna, Lasnamäe, Pirita</option>
 				<option>Mustamäe, Nõmme</option>
 				<option>Harjumaa, Raplamaa</option>
 				<option>Läänemaa, Hiiumaa, Saaremaa</option>
-			</select>
-<p>Tee oma valik klõpsates kandidaadi nimel</p>
-<p>Sinu valik on:</p>
-<p>kandidaat nr. 7</p>
-<p>Külli Kibuspuu</p>
-<p>Reformierakond</p>
-<button onclick="location.href='haaletamiseTagasiside.html'">Anna oma hääl</button> <br>
-<button onclick="location.href='tuvastatud.html'">Tagasi</button>
-</div>
-<div>
-<p>Kandidaadid ringkonnas:</p>
-<p>Haabersti, Põhja-Tallinn, Kristiine</p>
-<table border="1">
-<tr>
-<th>Nr.</th>
-<th>Nimi</th>
-<th>Erakond</th>
-</tr>
-<tr>
-<td>1</td>
-<td>Toomas Talu</td>
-<td>IRL</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Ants Arupalu</td>
-<td>Keskerakond</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Kätlin Kask</td>
-<td>Reformierakond</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Kaarel Kajakas</td>
-<td>SDE</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Jüri Jalakas</td>
-<td>IRL</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Julius Jugapuu</td>
-<td>SDE</td>
-</tr>
-</table></div>
-</div>
-</body>
+			</select><br />
+            
+            <p>Tee oma valik klõpsates kandidaadi nimel</p><br />
+            <p>Sinu valik on:</p>
+            kandidaat nr. 7
+            <h4>Külli Kibuspuud</h4>
+            Reformierakond<br /><br />
+            
+           	<button class="login" onclick="location.href='haaletamiseTagasiside.html'">Anna oma hääl</button> <br><br /><br />
+            <button class="login_nupud" onclick="location.href='tuvastatud.html'">Tagasi</button> <br><br /><br />
+            
+        </div>
+        
+        <div id="haaleta_parem">
+        	<div id="parem_sisu">
+        		Kandidaadid piirkonnas: 
+            	<h4>1.Haabersti, Põhja-Tallinn, Kristiine</h4>
+            	<!--<div id="haaleta_nupud">
+            		<a href="#" class="login_nupud">&nbsp;&nbsp;Nr.&nbsp;&nbsp;</a>
+                	<a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nimi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                	<a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;Erakond&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            	</div>-->
+                <table class="table3">
+                <tr>
+					<td>Nr.</td>
+					<td>Nimi</td>
+					<td>Erakond</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Toomas-Joonas Talupoeg</td>
+					<td>IRL</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Ants Arupalu</td>
+					<td>Keskerakond</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Kätlin Kask</td>
+					<td>Reformierakond</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Kaarel Kajakas</td>
+					<td>SDE</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Jüri Jalakas</td>
+					<td>IRL</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Julius Jugapuu</td>
+					<td>SDE</td>
+				</tr>
+                <tr>
+					<td>4</td>
+					<td>Kaarel Kajakas</td>
+					<td>SDE</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Jüri Jalakas</td>
+					<td>IRL</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Julius Jugapuu</td>
+					<td>SDE</td>
+				</tr>
+                <tr>
+					<td>4</td>
+					<td>Kaarel Kajakas</td>
+					<td>SDE</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Jüri Jalakas</td>
+					<td>IRL</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Julius Jugapuu</td>
+					<td>SDE</td>
+				</tr>
+			</table>
+            
+			</div>
+        </div>
+    </div>
 
+</body>
 </html>

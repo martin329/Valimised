@@ -367,3 +367,64 @@ STATISTIKA KANDITAATIDE JÄRGI
 	height:100%;
 	width:100%;
 }
+
+/*----------------
+HÄÄLETAMINE
+----------------*/
+#haaleta_vasak {
+	width:570px;
+	height:660px;
+	margin-left:20px;
+	margin-top:20px;
+	border: 2px solid #204562; 
+  	border-radius: 8px 8px 8px 8px;
+  	-webkit-border-radius: 8px 8px 8px 8px;
+  	-moz-border-radius: 8px 8px 8px 8px;
+	float:left;
+	background:#fff
+}
+#haaleta_parem {
+	width:570px;
+	height:660px;
+	margin-right:20px;
+	margin-top:20px;
+	border: 2px solid #204562; 
+  	border-radius: 8px 8px 8px 8px;
+  	-webkit-border-radius: 8px 8px 8px 8px;
+  	-moz-border-radius: 8px 8px 8px 8px;
+	float:right;
+	background:#fff
+}
+#parem_sisu {
+	width:570px;
+	height:660px;
+	margin-left:20px;
+	margin-top:20px;
+	text-align:left;
+}
+#haaleta_nupud {
+	width:300px;
+	margin-left:10px;
+	margin-top:10px;
+	text-align:left;
+	margin-bottom:5px;
+}
+.table3{
+	border-collapse: collapse;
+	display:block;
+	height:500px;
+	width:450px;
+	overflow:auto;
+	margin-left:10px;
+}
+.table3 td { 
+	border: 1px #ccc solid;
+	width:100px;
+	padding-bottom:1.2em;
+	padding-right:1.2em;
+}
+.table3 tr {
+	width:50px;
+	border: 0px #ccc solid;
+	text-align:center;
+}
