@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,19 +12,19 @@
         	<h1>Sisenemine Facebooki kontoga</h1>
         </div>
         <!--<FORM class="loginform" METHOD=POST ACTION="j_security_check">-->
-		<div>
-        	<form class="loginform" method=post>
-					E-mail: <br /><input name="j_username" type="text" class="input_style" size="42" maxlength="42" /><br /><br />
-					Password: <br /><input name="j_password" type="password" class="input_style" size="42" maxlength="42" /><br />
-			</form>
-			<div id="fb_sisse">
-				<button onclick="location.href='tuvastatud.html'" class="nupp" >Logi sisse</button>
+        <FORM class="loginform" METHOD=POST>
+			E-mail: <br /><input name="j_username" type="text" class="input_style" size="42" maxlength="42" /><br /><br />
+			Password: <br /><input name="j_password" type="password" class="input_style" size="42" maxlength="42" /><br />
+            <!--<div id="sisene">
+				<input type="submit" class="login" name="login" value="Logi sisse" a href="avaleht.html">
+            </div>-->
+            <div id="sisene">
+				<a href="tuvastatud.html" class="login">Logi sisse</a>
             </div>
-			
-			<div id="fb_tagasi">
-            	<button onclick="location.href='index.html'" class="nupp" >Tagasi</button>
+            <div id="tagasi">
+				<a href="index.html" class="login">Tagasi</a>
             </div>
-		</div>
+		</form>
     </div>
 </body>
 </html>

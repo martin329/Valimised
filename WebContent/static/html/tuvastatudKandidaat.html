@@ -1,8 +1,10 @@
 ﻿﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tuvastatud</title>
 <link href="css.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 
 <body>
@@ -18,14 +20,14 @@
             <!--Erinev võrreldes autentimata kasutajana-->
             <div id="logimise_konteiner">
             	<div id="haaleta">
-                	<a href="#" class="login_nupud">Lisa end kandidaadiks</a><br />	<br />
-                    <a href="#" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br /><br />
+                	<a href="kandidaadiksLisamine.html" class="login_nupud">Lisa end kandidaadiks</a><br />	<br />
+                    <a href="haaletamine.html" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br /><br />
                     
                     <div id="auth_ala">
                 		Oled tuvastatud kui:<br />
                         Jaan Õunapuu<br /><br /><br />
                 	</div>
-                    <a href="#" class="login_nupud">Logi välja</a>
+                    <a href="index.html" class="login_nupud">Logi välja</a>
                 </div>
             </div>
         </div>
@@ -43,7 +45,7 @@
 				</select>
             </div>
             <div id="ulemine_2">
-            	<a href="printvaadeErakond.html"><img src="print.png" alt="print" width="30" height="30" /></a>
+            	<a href="javascript:window.print()"><img src="print.png" alt="print" /></a>
             </div>
             <div id="ulemine_3">
             	Ringkonnas on kokku hääli antud:&nbsp;3 702<br />
