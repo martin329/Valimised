@@ -1,33 +1,37 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>E-valimised</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kandideerimine</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>Lisa end kandidaadiks</h1>
-<p>Oled tuvastatud kui:</p>
-<p>Jaan Õunapuu</p>
-<p>Vali piirkond kui soovid kandideerida:</p>
-<select name="Piirkond">
-				<option>Haabersti, Põhja-Tallinn, Kristiine</option>
-				<option>Kesklinna, Lasnamäe, Pirita</option>
-				<option>Mustamäe, Nõmme</option>
-				<option>Harjumaa, Raplamaa</option>
-				<option>Läänemaa, Hiiumaa, Saaremaa</option>
-			</select>
-<p>Vali erakond, mille nimekirjas soovid kandideerida:</p>
-<select name="Erakond">
-				<option>Sotsiaaldemokraatlik Erakond</option>
-				<option>Reformierakond</option>
-				<option>Keskerakond</option>
-				<option>Üksikkandidaat</option>
-			</select>
-<br>
-<button onclick="location.href='lisamiseTagasiside.html'">Lisa kandidatuur</button><br>
-<button onclick="location.href='tuvastatud.html'">Tagasi</button>
-</body>
+<div id="sisukast">
+	<div id="pealkiri">
+		<h1>Lisa end kandidaadiks</h1><br />
+    
+	<p>Oled tuvastatud kui:</p>
+	<p>Jaan Õunapuu</p>
+	<p>Vali piirkond kui soovid kandideerida:</p>
+	<select name="Piirkond">
+		<option>Haabersti, Põhja-Tallinn, Kristiine</option>
+		<option>Kesklinna, Lasnamäe, Pirita</option>
+		<option>Mustamäe, Nõmme</option>
+		<option>Harjumaa, Raplamaa</option>
+		<option>Läänemaa, Hiiumaa, Saaremaa</option>
+	</select>
+	<p>Vali erakond, mille nimekirjas soovid kandideerida:</p>
+	<select name="Erakond">
+		<option>Sotsiaaldemokraatlik Erakond</option>
+		<option>Reformierakond</option>
+		<option>Keskerakond</option>
+		<option>Üksikkandidaat</option>
+	</select><br /><br />
 
+	<a href="lisamiseTagasiside.html" class="login_nupud">Lisa kandidatuur</a><br /><br />
+    <a href="tuvastatud.html" class="login_nupud">Tagasi</a>
+ 	</div>
+</div>
+</body>
 </html>
