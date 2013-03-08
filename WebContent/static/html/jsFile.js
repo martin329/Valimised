@@ -1,3 +1,20 @@
+function progress() {
+	function showdivs() {
+		x.style.visibility = "visible";
+		y.style.visibility = "visible";
+		z.style.visibility = "hidden";
+	}
+	var x = document.getElementById("statistika_kandidaadid");
+	x.style.visibility = "hidden";
+	var y = document.getElementById("kandidaat_nupud");
+	y.style.visibility = "hidden";
+	var z = document.getElementById("loaderimg");
+	z.style.visibility = "visible";
+	setTimeout(function(){showdivs()}, 1000);
+	
+	
+}
+
 function validate() {
 	var selectPiirkond = (document.getElementById("piirkond").selectedIndex);
 	var selectErakond = (document.getElementById("erakond").selectedIndex);
