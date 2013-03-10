@@ -55,7 +55,7 @@ $( document ).ready(function() {
 		if (vaade != "kandidaadid"){
 			vaade = "kandidaadid";
 			console.log("muutus2");
-			$("#parem_konteiner").load("../html/kandidaat_vaade.html");
+			$("#parem_konteiner").load("../html/kandidaat_vaade.html #kandidaat_vaade>div");
 			
 		}
 	});
