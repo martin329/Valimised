@@ -1,0 +1,13 @@
+
+#sektor,#sektor2,#kaart2, #kaart, #vasak_konteiner, #haaleta, #kandidaat_alumine_1 {
+	display:none;
+	border:none;
+}
+#sisukast_pohivaade, #parem_konteiner {
+	border:none;
+	margin-left:auto;
+	margin-right:auto;
+}
+.table2 {
+	overflow:hidden;
+}
