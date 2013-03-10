@@ -2,4 +2,3 @@
 $(function() {
 		$("#kandidaatide-tabel").tablesorter({sortList:[[0,0]],widthFixed:true}); 
 	});
-	
