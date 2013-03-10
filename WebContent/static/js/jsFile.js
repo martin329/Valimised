@@ -40,3 +40,30 @@ function validate() {
 		window.location.href = "lisamiseTagasiside.html";
 	}
 }
+$( document ).ready(function() {
+	var vaade = "erakond";
+	$("#erakond_vaade_nupp").click(function erakond(){
+		console.log("vaade1");
+		if (vaade != "erakond"){
+			vaade = "erakond";
+			console.log("muutus1");
+			$("#parem_konteiner").load("../html/erakond_vaade.html #erakond_vaade");
+		}
+	});
+	$("#kandidaadid_vaade_nupp").click(function kandidaadid(){
+		console.log("vaade2");
+		if (vaade != "kandidaadid"){
+			vaade = "kandidaadid";
+			console.log("muutus2");
+			$("#parem_konteiner").load("../html/kandidaat_vaade.html");
+			
+		}
+	});
+	
+	$("#logi_valja").click(function logi_valja(){
+		$( "#logimise_konteiner").load("../html/logimine.html #autentimata");
+	});
+
+	
+
+});
