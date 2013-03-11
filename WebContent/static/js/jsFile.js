@@ -39,25 +39,69 @@ function validate() {
 }
 function otsi(){
 	progress();
+	var json;
 	var ringkond= ($("#ringkond_select").val());
 	var erakond = ($("#erakond_select").val());
 	var nimi = ($("#otsing_nimevali").val());
 	console.log(erakond, ringkond, nimi);
-	
-	
-	var json = $.getJSON("./data/candidate.json");
-    obj = JSON.parse(json);
-	
-	//parsed = JSON && JSON.parse(json);
-	if (ringkond==="Kogu Eesti" && erakond ==="Kõik erakonnad" && nimi !=""){
-		console.log("midagi");
-		vastus = $.getJSON("../data/candidate.json");
+	if (ringkond==="Kogu Eesti" && erakond==="Koik" && nimi !==""){
+		console.log("nimi");
+		json = $.getJSON("../data/candidate.json", function(data) {
+			  var output ="<tr><td>";
+			  var nimi =(data.person.name).split(" ");
+			  output+="1</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
+			  + data.party.name + "</td><td>" + data.region.name + "</td></tr>";
+			  console.log(output);
+			  tabelisse(output);
+			  });
 	}
-	else if(ringkond=="Kogu Eesti" && erakond != "Kõik erakonnad" && nimi ==""){
-		
+	else if(ringkond !=="Kogu Eesti" && erakond === "Koik" && nimi ===""){
+		console.log("piirkond");
+		json = $.getJSON("../data/findCandidatesByRegion.json", function(data) {
+			  var output ="";
+			  for (var i in data.candidates){
+		      var isik=data.candidates[i];
+			  var nimi =isik.person.name.split(" ");
+			  output+="<tr><td>" + i + "</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
+			  + isik.party.name + "</td><td>" + ringkond + "</td></tr>";
+			  console.log(output);
+			  tabelisse(output);
+			  }
+			  });
+	}
+	else if (ringkond === "Kogu Eesti" && erakond !== "Koik" && nimi ===""){
+		console.log("erakond");
+		json = $.getJSON("../data/findCandidatesByParty.json", function(data) {
+			  var output ="";
+			  for (var i in data.candidates){
+			  var isik=data.candidates[i];
+			  var nimi =isik.person.name.split(" ");
+			  output+="<tr><td>" + i + "</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
+			  + erakond + "</td><td>" + isik.region.name + "</td></tr>";
+			  console.log(output);
+			  tabelisse(output);
+			  }
+			  });
+	}
+	else if (ringkond!=="Kogu Eesti" && erakond!=="Koik"){
+		console.log("piirkond+erakond");
+		json = $.getJSON("../data/findCandidatesByPartyAndRegion.json", function(data) {
+			  var output ="";
+			  for (var i in data.candidates){
+			  var nimi =data.candidates[i].person.name.split(" ");
+			  output+="<tr><td>" + i + "</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
+			  + erakond + "</td><td>" + ringkond + "</td></tr>";
+			  console.log(output);
+			  tabelisse(output);
+			  }
+			  });
 	}
 }
-
+function tabelisse(input){
+	$("#kandidaaditabel_keha").empty();
+	$("#kandidaaditabel_keha").append(input);
+	$("#kandidaatide-tabel").trigger("update");  
+}
 $( document ).ready(function() {
 	var vaade = "erakond";
 	$("#erakond_vaade_nupp").click(function erakond(){
