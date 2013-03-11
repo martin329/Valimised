@@ -1,14 +1,11 @@
 function progress() {
+	var x = document.getElementById("kandidaatide-tabel");
+	var z = document.getElementById("loaderimg");
 	function showdivs() {
 		x.style.visibility = "visible";
-		y.style.visibility = "visible";
 		z.style.visibility = "hidden";
 	}
-	var x = document.getElementById("statistika_kandidaadid");
 	x.style.visibility = "hidden";
-	var y = document.getElementById("kandidaat_nupud");
-	y.style.visibility = "hidden";
-	var z = document.getElementById("loaderimg");
 	z.style.visibility = "visible";
 	setTimeout(function(){showdivs()}, 1000);
 	
@@ -40,6 +37,27 @@ function validate() {
 		window.location.href = "lisamiseTagasiside.html";
 	}
 }
+function otsi(){
+	progress();
+	var ringkond= ($("#ringkond_select").val());
+	var erakond = ($("#erakond_select").val());
+	var nimi = ($("#otsing_nimevali").val());
+	console.log(erakond, ringkond, nimi);
+	
+	
+	var json = $.getJSON("./data/candidate.json");
+    obj = JSON.parse(json);
+	
+	//parsed = JSON && JSON.parse(json);
+	if (ringkond==="Kogu Eesti" && erakond ==="Kõik erakonnad" && nimi !=""){
+		console.log("midagi");
+		vastus = $.getJSON("../data/candidate.json");
+	}
+	else if(ringkond=="Kogu Eesti" && erakond != "Kõik erakonnad" && nimi ==""){
+		
+	}
+}
+
 $( document ).ready(function() {
 	var vaade = "erakond";
 	$("#erakond_vaade_nupp").click(function erakond(){
@@ -55,14 +73,17 @@ $( document ).ready(function() {
 		if (vaade != "kandidaadid"){
 			vaade = "kandidaadid";
 			console.log("muutus2");
-			$("#parem_konteiner").load("../html/kandidaat_vaade.html #kandidaat_vaade>div");
-			
+			$("#parem_konteiner").load("kandidaat_vaade.html #kandidaat_vaade>div", function() {
+				  $("#kandidaatide-tabel").tablesorter();
+			});
+			console.log("tabel1");
 		}
 	});
 	
-	$("#logi_valja").click(function logi_valja(){
+	$("#logi_valja").click(function logivalja(){
 		$( "#logimise_konteiner").load("../html/logimine.html #autentimata");
 	});
+
 
 	
 

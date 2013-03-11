@@ -205,7 +205,6 @@ PAREMPOOLNE VAADE
 -----------------*/
 #parem_konteiner {
 	max-width:900px;
-	min-height:660px;
 	height:100%;
 	margin-left:280px;
 	margin-right:20px;
@@ -317,9 +316,16 @@ SEKTORDIAGRAMM JA KAART
 /*-----------------------------
 STATISTIKA KANDITAATIDE JÄRGI
 -----------------------------*/
+#loaderimg {
+	visibility:hidden;
+}
+.select_style {
+	width:200px;
+	margin-bottom:5px;
+}
 #kandidaat_alumine_1 {
 	width:300px;
-	margin-left:20px;
+	margin-left:280px;
 	margin-top:80px;
 	text-align:left;
 }
