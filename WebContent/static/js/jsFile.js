@@ -118,7 +118,7 @@ $( document ).ready(function() {
 			vaade = "kandidaadid";
 			console.log("muutus2");
 			$("#parem_konteiner").load("kandidaat_vaade.html #kandidaat_vaade>div", function() {
-				  $("#kandidaatide-tabel").tablesorter();
+				  $("#kandidaatide-tabel").tablesorter({sortList:[[0,0]],widthFixed:true});
 			});
 			console.log("tabel1");
 		}
