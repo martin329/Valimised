@@ -205,7 +205,7 @@ PAREMPOOLNE VAADE
 -----------------*/
 #parem_konteiner {
 	max-width:900px;
-	height:100%;
+	min-height:660px;
 	margin-left:280px;
 	margin-right:20px;
 	margin-top:20px;
