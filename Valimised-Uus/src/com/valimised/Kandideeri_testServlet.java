@@ -48,7 +48,7 @@ public class Kandideeri_testServlet extends HttpServlet {
 			}
 		} catch (SQLException e) {
 			out.println("<html><head></head><body>Olete juba kandidaadiks lisatud</body></html>");
-			resp.setHeader("Refresh", "2; url=/html/tuvastatud.html");
+			resp.setHeader("Refresh", "3; url=/html/lisamiseTagasisideError.html");
 			return;
 		} finally {
 			if (c != null)

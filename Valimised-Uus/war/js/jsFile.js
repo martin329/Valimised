@@ -35,7 +35,7 @@ function validate() {
 		document.getElementById("piirkond").style.backgroundColor='#ffffff'
 	}
 	else {
-		document.forms["LisaKandidat"].submit();
+		document.getElementById("LisaKandidaat").submit();
 //		window.location.href = "lisamiseTagasiside.html";
 	}
 }
