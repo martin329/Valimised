@@ -16,10 +16,12 @@ public class testServlet extends HttpServlet {
 	private String candidate;
 	private String region;
 	private String type;
+	int erakond_id=0;
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException{
 		Gson gson=new Gson();
-		partyName=req.getParameter("erakond").trim();
+		partyName=req.getParameter("erakond");
+		erakond_id = UtilitiesServlet.getErakondId(partyName);
 		candidate = req.getParameter("nimi");
 		region = req.getParameter("piirkond");
 		type = req.getParameter("type");
@@ -28,8 +30,9 @@ public class testServlet extends HttpServlet {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager.getConnection("jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB", "root", "");
 			Statement stmt=c.createStatement();
-			ResultSet rs=stmt.executeQuery("select Kandidaat.Id, Eesnimi, Perenimi from Kandidaat, Isik where Kandidaat.Partei=(select Id from Partei where Nimi='"+partyName+ "') and Kandidaat.Isik=Isik.Id" );
+			ResultSet rs=stmt.executeQuery("SELECT kandidaat.id, eesnimi, perenimi FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id WHERE kandidaat.erakond="+erakond_id );
 			Collection collection= new ArrayList();
+			
 			collection.add(rs.getObject(1));
 			collection.add(rs.getObject(2));
 			collection.add(rs.getObject(3));

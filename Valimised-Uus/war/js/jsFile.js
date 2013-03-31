@@ -45,13 +45,13 @@ function otsi(){
 	var ringkond= ($("#ringkond_select").val());
 	var erakond = ($("#erakond_select").val());
 	var nimi = ($("#otsing_nimevali").val());
-	String data;
+	var data;
 	data= "?ringkond="+ringkond+"&erakond="+erakond+"&nimi="+nimi;
 	console.log(data);
 	if (ringkond==="Kogu Eesti" && erakond==="Koik" && nimi !==""){
 		console.log("nimi");
 		data=data+"&type=byName";
-		json = $.getJSON("/testServlet", function(data) {
+		json = $.getJSON("/test", function(data) {
 			  var output ="<tr><td>";
 			  var nimi =(data.person.name).split(" ");
 			  output+="1</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
