@@ -40,6 +40,16 @@ AVALEHT, AUTENTIMINE
 	text-align:center;
 }
 
+/*-------------------------
+ALGUSE HOIATUS
+-------------------------*/
+#algus_hoiatus {
+	font-size: 24px;
+	color: red;
+	font-weight:bold;
+}
+
+
 /*---------------------------------------
 AUTENTIMINE JA FACEBOOKI KAUDU LOGIMINE
 ---------------------------------------*/
