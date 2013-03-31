@@ -21,6 +21,7 @@ function validate() {
 		if (selectErakond == 0) {
 			document.getElementById("erakondValidator").innerHTML="Erakond valimata";
 			document.getElementById("erakond").style.backgroundColor='#99CCFF';
+			
 		}
 		else {
 			document.getElementById("erakondValidator").innerHTML="";
@@ -34,7 +35,8 @@ function validate() {
 		document.getElementById("piirkond").style.backgroundColor='#ffffff'
 	}
 	else {
-		window.location.href = "lisamiseTagasiside.html";
+		document.getElementById("LisaKandidaat").submit();
+//		window.location.href = "lisamiseTagasiside.html";
 	}
 }
 function otsi(){
@@ -43,10 +45,13 @@ function otsi(){
 	var ringkond= ($("#ringkond_select").val());
 	var erakond = ($("#erakond_select").val());
 	var nimi = ($("#otsing_nimevali").val());
-	console.log(erakond, ringkond, nimi);
+	String data;
+	data= "?ringkond="+ringkond+"&erakond="+erakond+"&nimi="+nimi;
+	console.log(data);
 	if (ringkond==="Kogu Eesti" && erakond==="Koik" && nimi !==""){
 		console.log("nimi");
-		json = $.getJSON("../data/candidate.json", function(data) {
+		data=data+"&type=byName";
+		json = $.getJSON("/testServlet", function(data) {
 			  var output ="<tr><td>";
 			  var nimi =(data.person.name).split(" ");
 			  output+="1</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
@@ -57,6 +62,7 @@ function otsi(){
 	}
 	else if(ringkond !=="Kogu Eesti" && erakond === "Koik" && nimi ===""){
 		console.log("piirkond");
+		data=data+"&type=byRegion";
 		json = $.getJSON("../data/findCandidatesByRegion.json", function(data) {
 			  var output ="";
 			  for (var i in data.candidates){
@@ -71,6 +77,7 @@ function otsi(){
 	}
 	else if (ringkond === "Kogu Eesti" && erakond !== "Koik" && nimi ===""){
 		console.log("erakond");
+		data=data+"&type=byParty";
 		json = $.getJSON("../data/findCandidatesByParty.json", function(data) {
 			  var output ="";
 			  for (var i in data.candidates){
@@ -85,6 +92,7 @@ function otsi(){
 	}
 	else if (ringkond!=="Kogu Eesti" && erakond!=="Koik"){
 		console.log("piirkond+erakond");
+		data=data+"&type=byPartyAndRegion";
 		json = $.getJSON("../data/findCandidatesByPartyAndRegion.json", function(data) {
 			  var output ="";
 			  for (var i in data.candidates){
