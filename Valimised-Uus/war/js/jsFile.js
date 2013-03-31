@@ -45,7 +45,7 @@ function otsi(){
 	var ringkond= ($("#ringkond_select").val());
 	var erakond = ($("#erakond_select").val());
 	var nimi = ($("#otsing_nimevali").val());
-	String data;
+	var data;
 	data= "?ringkond="+ringkond+"&erakond="+erakond+"&nimi="+nimi;
 	console.log(data);
 	if (ringkond==="Kogu Eesti" && erakond==="Koik" && nimi !==""){
