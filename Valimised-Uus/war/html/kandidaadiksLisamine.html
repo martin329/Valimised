@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<form action="/Kandidaadiks_lisamine" method="post" id="LisaKandidaat">
 <div id="sisukast">
 	<div id="pealkiri">
 		<h1>Lisa end kandidaadiks</h1><br />
@@ -34,10 +35,14 @@
 	</select>
 	<span id="erakondValidator"></span>
 	<br /><br />
-	
-	<a onclick="validate()" class="login_nupud">Lisa kandidatuur</a><br /><br />
+	<div id="sends"><input onclick="validate()" class="login_nupud" value="Lisa kandidatuur" /></div>
+	<!--
+	<a input type="submit" onclick="validate()" class="login_nupud">Lisa kandidatuur</a><br /><br />
+	-->
     <a href="tuvastatud.html" class="login_nupud">Tagasi</a>
  	</div>
+ 	
 </div>
+</form>
 </body>
 </html>

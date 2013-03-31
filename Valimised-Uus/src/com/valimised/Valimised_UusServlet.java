@@ -11,12 +11,22 @@ public class Valimised_UusServlet extends HttpServlet {
               throws IOException {
         UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
-
+        
+        
         if (user != null) {
-            resp.setContentType("text/plain");
-            resp.getWriter().println("Hello, " + user.getNickname());
-            resp.getWriter().println("http://localhost:8888" + userService.createLogoutURL(req.getRequestURI()));
-            
+        	
+        	
+        	if (user.getNickname().indexOf("@")==-1) {
+        		resp.setContentType("text/plain");
+                resp.getWriter().println("Hello gmail, ");
+                resp.getWriter().println("http://localhost:8888" + userService.createLogoutURL(req.getRequestURI()));
+                
+        	} else {
+        		resp.setContentType("text/plain");
+        		resp.getWriter().println("Hell0, " + user.getNickname());
+        		resp.getWriter().println("http://localhost:8888" + userService.createLogoutURL(req.getRequestURI()));
+        	}
+        	
         } else {
             resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
         }

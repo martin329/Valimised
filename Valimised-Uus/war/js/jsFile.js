@@ -21,6 +21,7 @@ function validate() {
 		if (selectErakond == 0) {
 			document.getElementById("erakondValidator").innerHTML="Erakond valimata";
 			document.getElementById("erakond").style.backgroundColor='#99CCFF';
+			
 		}
 		else {
 			document.getElementById("erakondValidator").innerHTML="";
@@ -34,7 +35,8 @@ function validate() {
 		document.getElementById("piirkond").style.backgroundColor='#ffffff'
 	}
 	else {
-		window.location.href = "lisamiseTagasiside.html";
+		document.forms["LisaKandidat"].submit();
+//		window.location.href = "lisamiseTagasiside.html";
 	}
 }
 function otsi(){
