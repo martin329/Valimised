@@ -2,8 +2,8 @@ package com.valimised;
 
 public class Kandidaat {
 	public int id;
-	public int piirkond;
-	public int erakond;
+	public String piirkond;
+	public String erakond;
 	public String eesnimi;
 	public String perenimi;
 	
@@ -14,7 +14,7 @@ public class Kandidaat {
 				+ "]";
 	}
 
-	public Kandidaat(int id, int piirkond, int erakond, String eesnimi,
+	public Kandidaat(int id, String piirkond, String erakond, String eesnimi,
 			String perenimi) {
 		super();
 		this.id = id;

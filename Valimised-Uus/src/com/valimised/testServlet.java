@@ -17,7 +17,7 @@ public class testServlet extends HttpServlet {
 	private String partyName;
 	private String candidate;
 	private String region;
-	public String type;
+	private int tuup;
 	int erakond_id = 0;
 	int piirkond_id = 0;
 
@@ -30,11 +30,12 @@ public class testServlet extends HttpServlet {
 		candidate = req.getParameter("Text1");
 		region = req.getParameter("Ringkond");
 		piirkond_id=UtilitiesServlet.getPiirkondId(region);
-		type = req.getParameter("type");
+		tuup = Integer.parseInt(req.getParameter("type"));
 		Connection con = null;
 		ResultSet rs = null;
 		Statement stmt = null;
-		Kandidaat kand = new Kandidaat(0,0,0,"","");
+		
+		
 
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
@@ -42,44 +43,36 @@ public class testServlet extends HttpServlet {
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
 			stmt = con.createStatement();
-			if (type=="byParty"){
-				rs = stmt.executeQuery("SELECT * FROM kandidaat;");
-				Collection<Kandidaat> col = new ArrayList<Kandidaat>();
+			if (this.tuup == 1){
+				rs = stmt.executeQuery("SELECT kandidaat.id, eesnimi, perenimi, piirkond.nimi FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id, piirkond WHERE kandidaat.piirkond=piirkond.id && kandidaat.erakond="
+						+ erakond_id +";");
+				Kandidaadid kandidaadid = new Kandidaadid(new ArrayList<Kandidaat>());
 				while(rs.next()){
-					kand.id=rs.getInt(1);
-					kand.eesnimi=rs.getString(2);
-					kand.perenimi=rs.getString(3);
-					kand.piirkond=rs.getInt(4);
-					kand.erakond=erakond_id;
-					col.add(kand);
+					
+					kandidaadid.kandidaadid.add(new Kandidaat(rs.getInt(1),rs.getString(4),partyName,rs.getString(2),rs.getString(3)));
 
 				}
-				json = gson.toJson(col);
+				json = gson.toJson(kandidaadid);
 			}
-			else if(type == "byRegion"){
-				rs = stmt.executeQuery("SELECT kandidaat.id, eesnimi, perenimi, erakond.id FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id, erakond WHERE kandidaat.piirkond="
+			else if(this.tuup == 2){
+				rs = stmt.executeQuery("SELECT kandidaat.id, eesnimi, perenimi, erakond.nimi FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id, erakond WHERE kandidaat.piirkond="
 						+ piirkond_id);
-				Collection<Kandidaat> col = new ArrayList<Kandidaat>();
+				Kandidaadid kandidaadid = new Kandidaadid(new ArrayList<Kandidaat>());
 				while(rs.next()){
-					kand.id=rs.getInt(1);
-					kand.eesnimi=rs.getString(2);
-					kand.perenimi=rs.getString(3);
-					kand.piirkond=piirkond_id;
-					kand.erakond=rs.getInt(4);
-					col.add(kand);
+				kandidaadid.kandidaadid.add(new Kandidaat(rs.getInt(1),region,rs.getString(3),rs.getString(2),rs.getString(3)));
 				}
-				json = gson.toJson(col);
+				json = gson.toJson(kandidaadid);
 			}
-			else if (type == "byPartyandRegion"){
+			else if (this.tuup == 3){
 				rs = stmt.executeQuery("SELECT kandidaat.id, eesnimi, perenimi FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id WHERE kandidaat.erakond="
-						+ erakond_id);
-				Collection<Kandidaat> col = new ArrayList<Kandidaat>();
+						+ erakond_id + " && kandidaat.piirkond=" + piirkond_id);
+				Kandidaadid kandidaadid = new Kandidaadid(new ArrayList<Kandidaat>());
 				while(rs.next()){
-
+				kandidaadid.kandidaadid.add(new Kandidaat(rs.getInt(1),region,partyName,rs.getString(2),rs.getString(3)));
 				}
-				json = gson.toJson(col);
+				json = gson.toJson(kandidaadid);
 			}
-
+			resp.setCharacterEncoding("UTF-8");
 			resp.setContentType("application/json");
 			resp.getWriter().write(json);
 		} catch (SQLException e) {

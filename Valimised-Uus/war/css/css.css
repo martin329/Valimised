@@ -226,6 +226,10 @@ PAREMPOOLNE VAADE
   	-moz-border-radius: 8px 8px 8px 8px;
 	background:#fff
 }
+#formBox{
+	position:relative;
+	margin-bottom:20px;
+}
 #ulemine_1 {
 	width:240px;
 	height:45px;
