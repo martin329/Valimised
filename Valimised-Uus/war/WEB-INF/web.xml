@@ -30,15 +30,36 @@
 		<servlet-name>testServlet</servlet-name>
 		<url-pattern>/test</url-pattern>
 	</servlet-mapping>
-	
+	<servlet>
+		<servlet-name>haaletamine</servlet-name>
+		<servlet-class>com.valimised.Haaletamine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>haaletamine</servlet-name>
+		<url-pattern>/haaletamine</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>haaleKustutamine</servlet-name>
+		<servlet-class>com.valimised.HaaleKustutamine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>haaleKustutamine</servlet-name>
+		<url-pattern>/haaleKustutamine</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>checkIfCanVote</servlet-name>
+		<servlet-class>com.valimised.CheckIfCanVote</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkIfCanVote</servlet-name>
+		<url-pattern>/checkIfCanVote</url-pattern>
+	</servlet-mapping>
 	<servlet>
     	<servlet-name>suggestKeywordServlet</servlet-name>
     	<servlet-class>com.valimised.SuggestKeywordServlet</servlet-class>
     </servlet>
-  
     <servlet-mapping>
     	<servlet-name>suggestKeywordServlet</servlet-name>
     	<url-pattern>/search</url-pattern>
     </servlet-mapping>
-  
-</web-app>
+
