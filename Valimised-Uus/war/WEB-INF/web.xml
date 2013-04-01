@@ -54,4 +54,12 @@
 		<servlet-name>checkIfCanVote</servlet-name>
 		<url-pattern>/checkIfCanVote</url-pattern>
 	</servlet-mapping>
-</web-app>
+	<servlet>
+    	<servlet-name>suggestKeywordServlet</servlet-name>
+    	<servlet-class>com.valimised.SuggestKeywordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>suggestKeywordServlet</servlet-name>
+    	<url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
