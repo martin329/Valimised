@@ -437,6 +437,12 @@ HÄÄLETAMINE
 	border: 0px #ccc solid;
 	text-align:center;
 }
+.haaletamisTabelValitud{
+	width:50px;
+	border:0px #ccc solid;
+	text-align:center;
+	background:#ccf
+}
 #footer{
     display: table;
     text-align: center;

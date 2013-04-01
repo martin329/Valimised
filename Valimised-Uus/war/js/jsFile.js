@@ -34,7 +34,7 @@ function validate() {
 			document.getElementById("piirkond").style.backgroundColor = '#ffffff'
 	} else {
 		document.getElementById("LisaKandidaat").submit();
-		// window.location.href = "lisamiseTagasiside.html";
+//		window.location.href = "lisamiseTagasiside.html";
 	}
 }
 
@@ -43,17 +43,16 @@ $(document)
 		function() {
 			var vaade = "erakond";
 			$("#erakond_vaade_nupp")
-			.click(
-					function erakond() {
-						console.log("vaade1");
-						if (vaade != "erakond") {
-							vaade = "erakond";
-							console.log("muutus1");
-							$("#parem_konteiner")
-							.load(
-							"../html/erakond_vaade.html #erakond_vaade");
-						}
-					});
+			.click(function erakond() {
+				console.log("vaade1");
+				if (vaade != "erakond") {
+					vaade = "erakond";
+					console.log("muutus1");
+					$("#parem_konteiner")
+					.load(
+					"../html/erakond_vaade.html #erakond_vaade");
+				}
+			});
 			$("#kandidaadid_vaade_nupp")
 			.click(
 					function kandidaadid() {
