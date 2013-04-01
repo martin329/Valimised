@@ -59,7 +59,7 @@ public class testServlet extends HttpServlet {
 						+ piirkond_id);
 				Kandidaadid kandidaadid = new Kandidaadid(new ArrayList<Kandidaat>());
 				while(rs.next()){
-				kandidaadid.kandidaadid.add(new Kandidaat(rs.getInt(1),region,rs.getString(3),rs.getString(2),rs.getString(3)));
+				kandidaadid.kandidaadid.add(new Kandidaat(rs.getInt(1),region,rs.getString(4),rs.getString(2),rs.getString(3)));
 				}
 				json = gson.toJson(kandidaadid);
 			}

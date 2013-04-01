@@ -55,9 +55,10 @@ function otsi() {
 				output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi
 						+ "</td><td>" + isik.perenimi + "</td><td>" + erakond
 						+ "</td><td>" + isik.piirkond + "</td></tr>";
+			}
 				console.log(output);
 				tabelisse(output);
-			}
+
 		});
 	} else if (ringkond !== "Kogu Eesti" && erakond === "Koik" && nimi === "") {
 		console.log("piirkond");
@@ -69,9 +70,10 @@ function otsi() {
 				output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi
 						+ "</td><td>" + isik.perenimi + "</td><td>" + erakond
 						+ "</td><td>" + isik.piirkond + "</td></tr>";
+			}
 				console.log(output);
 				tabelisse(output);
-			}
+
 		});
 	} else if (ringkond === "Kogu Eesti" && erakond !== "Koik" && nimi === "") {
 		console.log("erakond");
@@ -83,9 +85,9 @@ function otsi() {
 				output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi
 						+ "</td><td>" + isik.perenimi + "</td><td>" + erakond
 						+ "</td><td>" + isik.piirkond + "</td></tr>";
+			}
 				console.log(output);
 				tabelisse(output);
-			}
 		});
 	} else if (ringkond !== "Kogu Eesti" && erakond !== "Koik") {
 		console.log("piirkond+erakond");
@@ -96,10 +98,10 @@ function otsi() {
 				var isik = data.kandidaadid[i];
 				output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi
 						+ "</td><td>" + isik.perenimi + "</td><td>" + erakond
-						+ "</td><td>" + isik.piirkond + "</td></tr>";
+						+ "</td><td>" + piirkond + "</td></tr>";
+			}
 				console.log(output);
 				tabelisse(output);
-			}
 		});
 	}
 }
