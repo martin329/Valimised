@@ -29,6 +29,11 @@ public class Kandideeri_testServlet extends HttpServlet {
 			c = DriverManager.getConnection(
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
+			
+			String statement1 = "DELETE FROM kandidaat WHERE isik=20";
+			PreparedStatement pstmt1 = c.prepareStatement(statement1);
+			pstmt1.execute();
+			
 			String statement = "INSERT INTO kandidaat(isik,erakond,piirkond) VALUES(? , ? , ?)";
 			PreparedStatement stmt = c.prepareStatement(statement);
 			Statement stmt2 = c.createStatement();
