@@ -32,13 +32,13 @@ public class SuggestKeywordServlet extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	          throws IOException {	
 
-	          PrintWriter out = resp.getWriter();
+	          PrintWriter out = response.getWriter();
 	          Connection c = null;
 	          java.util.List<String> kandidaadid = new ArrayList<String>();
-	          String key = req.getParameter("foo");
+	          String key = request.getParameter("foo");
 	          
 	          try {
 	              DriverManager.registerDriver(new AppEngineDriver());
@@ -54,7 +54,7 @@ public class SuggestKeywordServlet extends HttpServlet {
 	              }
 	                           
 			      String gson = new Gson().toJson(kandidaadid);
-			      resp.setContentType("application/json");
+			      response.setContentType("application/json");
 			      out.write(gson);
 			      out.flush();
 			    } catch (SQLException e) {

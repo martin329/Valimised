@@ -1,5 +1,8 @@
-$( "#tags" ).autocomplete({
-	source: function(req, resp) {
-    $.getJSON("./autocomplete", { foo: req.term }, resp);
-    }
- });
+
+$(function() {
+	$( "#tags" ).autocomplete({
+		source: function(request, response) {
+		    $.getJSON("./autocomplete", { foo: request.term }, response);
+		  }
+	});
+});
