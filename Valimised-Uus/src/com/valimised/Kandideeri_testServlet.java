@@ -41,10 +41,20 @@ public class Kandideeri_testServlet extends HttpServlet {
 			String erakond = req.getParameter("Erakond");
 			String piirkond = req.getParameter("Piirkond");
 
-			int erakond_id = 0;
+			int erakond_id;
+			String statementForErakond = "SELECT id FROM erakond WHERE nimi LIKE '"+erakond+"'";
+			Statement pstmtForErakond = c.prepareStatement(statementForErakond);
+			ResultSet rsForErakond = pstmtForErakond.executeQuery(statementForErakond);
+			rsForErakond.next();
+			erakond_id = rsForErakond.getInt("id");
 
 			
-			int piirkond_id = 0;
+			int piirkond_id;
+			String statementForPiirkond = "SELECT id FROM piirkond WHERE nimi LIKE '"+piirkond+"'";
+			Statement pstmtForPiirkond = c.prepareStatement(statementForPiirkond);
+			ResultSet rsForPiirkond = pstmtForPiirkond.executeQuery(statementForPiirkond);
+			rsForPiirkond.next();
+			piirkond_id = rsForPiirkond.getInt("id");
 			
 
 			stmt.setLong(1, 20);
@@ -59,9 +69,9 @@ public class Kandideeri_testServlet extends HttpServlet {
 			}
 
 		} catch (SQLException e) {
-			// out.println("<html><head></head><body>Olete juba kandidaadiks lisatud</body></html>");
+			out.println(e.getMessage());
 			resp.setHeader("Refresh",
-					"0; url=/html/lisamiseTagasisideError.html");
+					"5; url=/html/lisamiseTagasisideError.html");
 			return;
 		} finally {
 			if (c != null)
