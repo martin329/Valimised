@@ -1,7 +1,6 @@
 package com.valimised;
 
 import java.io.*;
-import javax.servlet.*;
 import javax.servlet.http.*;
 
 import com.google.appengine.api.rdbms.AppEngineDriver; 
@@ -20,8 +19,15 @@ public class SuggestKeywordServlet extends HttpServlet {
 	          Connection c = null;
 	            try {
 	              DriverManager.registerDriver(new AppEngineDriver());
+	              String lname = req.getParameter("lname");
+	              String fname = req.getParameter("fname");
 	              c = DriverManager.getConnection("jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB", "root", "");
-	            
+	              String statement = "SELECT eesnimi, perenimi FROM kandidaat WHERE eesnimi LIKE ?";
+	              PreparedStatement stmt = c.prepareStatement(statement);
+	              stmt.setString(1, fname + "%");
+	              stmt.setString(1, lname + "%");
+	           
+	              
 			      String gson = new Gson().toJson("");
 			      resp.setContentType("application/json");
 			      out.write(gson);
