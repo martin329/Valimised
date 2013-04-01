@@ -45,15 +45,12 @@ function otsi(){
 	var ringkond= ($("#ringkond_select").val());
 	var erakond = ($("#erakond_select").val());
 	var nimi = ($("#otsing_nimevali").val());
-	var dataObject = {};
-	dataObject +=
-	var data;
-	data= "?ringkond="+ringkond+"&erakond="+erakond+"&nimi="+nimi;
+	var data = $.param($("#searchForm").serializeArray());
 	console.log(data);
 	if (ringkond==="Kogu Eesti" && erakond==="Koik" && nimi !==""){
 		console.log("nimi");
 		data=data+"&type=byName";
-		json = $.getJSON("/test", function(data) {
+		json = $.getJSON("/test", data, function(data) {
 			  var output ="<tr><td>";
 			  var nimi =(data.person.name).split(" ");
 			  output+="1</td><td>" + nimi[0] + "</td><td>" + nimi[1] + "</td><td>"
@@ -80,7 +77,7 @@ function otsi(){
 	else if (ringkond === "Kogu Eesti" && erakond !== "Koik" && nimi ===""){
 		console.log("erakond");
 		data=data+"&type=byParty";
-		json = $.getJSON("../data/findCandidatesByParty.json", function(data) {
+		json = $.getJSON("/test",data, function(data) {
 			  var output ="";
 			  for (var i in data.candidates){
 			  var isik=data.candidates[i];

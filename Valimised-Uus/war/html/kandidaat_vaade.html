@@ -15,23 +15,47 @@
 </head>
 <body>
 	<div id="kandidaat_vaade">
-		<div id="ulemine_1">
-			Vali ringkond:<br /> <select id=ringkond_select name="Ringkond"
-				class=select_style>
-				<option>Kogu Eesti</option>
-				<option>Haabersti, Põhja-Tallinn, Kristiine</option>
-				<option>Kesklinna, Lasnamäe, Pirita</option>
-				<option>Mustamäe, Nõmme</option>
-				<option>Harjumaa, Raplamaa</option>
-				<option>Läänemaa, Hiiumaa, Saaremaa</option>
-			</select><br /> Vali erakond:<br /> <select id=erakond_select name="Erakond"
-				class=select_style>
-				<option>Koik</option>
-				<option>Reformierakond</option>
-				<option>Keskerakond</option>
-				<option>IRL</option>
-				<option>SDE</option>
-			</select>
+		<div id="1">
+			<form id="searchForm">
+				<div id="ulemine_1">
+					Vali ringkond:<br /> <select id=ringkond_select name="Ringkond"
+						class=select_style>
+						<option>Kogu Eesti</option>
+						<option>Tallinna Haabersti, Põhja-Tallinna ja Kristiine
+							linnaosa</option>
+						<option>Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
+						<option>Tallinna Mustamäe ja Nõmme linnaosa</option>
+						<option>Harju- ja Raplamaa</option>
+						<option>Hiiu-, Lääne ja Saaremaa</option>
+						<option>Lääne-Virumaa</option>
+						<option>Ida-Virumaa</option>
+						<option>Järva- ja Viljandimaa</option>
+						<option>Jõgeva- ja Tartumaa</option>
+						<option>Tartu Linn</option>
+						<option>Võru-, Valga- ja Põlvamaa</option>
+						<option>Pärnumaa</option>
+					</select><br /> Vali erakond:<br /> <select id=erakond_select
+						name="Erakond" class=select_style>
+						<option>Koik</option>
+						<option>Eesti Iseseisvuspartei</option>
+						<option>Eesti Keskerakond</option>
+						<option>Eesti Konservatiivne Rahvaerakond</option>
+						<option>Eesti Reformierakond</option>
+						<option>Eesti Vabaduspartei – Põllumeeste Kogu</option>
+						<option>Eestimaa Ühendatud Vasakpartei</option>
+						<option>Erakond Eesti Kristlikud Demokraadid</option>
+						<option>Erakond Eestimaa Rohelised</option>
+						<option>Erakond Isamaa ja Res Publica Liit</option>
+						<option>Sotsiaaldemokraatlik Erakond</option>
+						<option>Üksikkandidaadid</option>
+					</select>
+				</div>
+				<div id="kandidaat_alumine_1">
+					Otsi kandidaati:<input name="Text1" type="text"
+						id="otsing_nimevali"></input> <input type="button" value="Otsi"
+						onclick=otsi()></input>
+				</div>
+			</form>
 		</div>
 		<div id="ulemine_2">
 			<a href="javascript:window.print()"><img
@@ -42,10 +66,7 @@
 			Eesti:&nbsp;22 237
 		</div>
 
-		<div id="kandidaat_alumine_1">
-			Otsi kandidaati:<input name="Text1" type="text" id="otsing_nimevali"></input>
-			<input type="button" value="Otsi" onclick=otsi()></input>
-		</div>
+
 		<div id="statistika_kandidaadid">
 			<img src="../images/loader.gif" id=loaderimg></img>
 			<table id="kandidaatide-tabel" class="tablesorter">
