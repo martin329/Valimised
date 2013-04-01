@@ -32,7 +32,7 @@ public class SuggestKeywordServlet extends HttpServlet {
 		super();
 	}
 
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	          throws IOException {	
 
 	          PrintWriter out = resp.getWriter();
@@ -43,7 +43,7 @@ public class SuggestKeywordServlet extends HttpServlet {
 	          try {
 	              DriverManager.registerDriver(new AppEngineDriver());
 	              c = DriverManager.getConnection("jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB", "root", "");
-	              String statement = "SELECT perenimi FROM isik WHERE perenimi LIKE '" + key + "%';";
+	              String statement = "SELECT CONCAT(perenimi,', ', eesnimi) AS perenimi FROM isik WHERE perenimi LIKE '" + key + "%';";
 	              System.out.println(statement);
 	              
 	              Statement stmt = c.createStatement();
