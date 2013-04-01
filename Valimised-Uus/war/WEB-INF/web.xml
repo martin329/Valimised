@@ -62,4 +62,4 @@
     	<servlet-name>suggestKeywordServlet</servlet-name>
     	<url-pattern>/search</url-pattern>
     </servlet-mapping>
-
+</web-app>

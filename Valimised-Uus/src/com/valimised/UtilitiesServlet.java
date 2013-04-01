@@ -2,7 +2,7 @@ package com.valimised;
 
 public class UtilitiesServlet {
 	public static int getErakondId(String erakond) {
-		int erakond_id = 0;
+		int erakond_id;
 		switch (erakond) {
 
 		case "Eesti Iseseisvuspartei":
@@ -39,14 +39,14 @@ public class UtilitiesServlet {
 			erakond_id = 11;
 			break;
 		default:
-			erakond_id = 1;
+			erakond_id = 0;
 			break;
 		}
 		return erakond_id;
 	}
 
 	public static int getPiirkondId(String piirkond) {
-		int piirkond_id = 0;
+		int piirkond_id;
 		switch (piirkond) {
 		case "Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa":
 			piirkond_id = 1;
@@ -85,7 +85,7 @@ public class UtilitiesServlet {
 			piirkond_id = 12;
 			break;
 		default:
-			piirkond_id = 1;
+			piirkond_id = 0;
 			break;
 		}
 		return piirkond_id;
