@@ -8,12 +8,16 @@ $(document).ready(function(){
         var valitud = $(".haaletamisTabelValitud").html();
         var arr;
         arr = valitud.split("<td>");
-        var asendus ='<div id="kandValik">kandidaat nr. ' + arr[1].substring(0,arr[1].indexOf("<"))
-        +'<h4>'+arr[2].substring(0,arr[2].indexOf("<"))+'</h4>'
-		+ arr[3].substring(0,arr[3].indexOf("<"))   
+        var valitudList = [arr[1].substring(0,arr[1].indexOf("<")),
+        arr[2].substring(0,arr[2].indexOf("<")),
+        arr[3].substring(0,arr[3].indexOf("<"))];
+        var asendus ='<div id="kandValik">kandidaat nr:' + valitudList[0]  + '</p>'
+        +'<h4>'+valitudList[1]+'</h4>'
+		+ valitudList[2]   
 		+'</div>';
-        $("#kandValik").replaceWith(asendus  
-        );
+        $("#kandValik").replaceWith(asendus);
+        $("#kandidaatNr").val(valitudList[0]);
+        $("#haaletajaNr").val(20);
         
     });
     $('.haaletaminePiirkondValik').change(function() {

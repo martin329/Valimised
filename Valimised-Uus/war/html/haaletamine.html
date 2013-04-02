@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<form action="/haaletamine" method="post" id="haaletamine">
+	<!--<form action="/haaletamine" method="post" id="haaletamine">-->
 		<div id="sisukast_pohivaade">
 			<div id="haaleta_vasak">
 				<br />
@@ -45,12 +45,15 @@
 				<p>Sinu valik on:</p>
 				<div id="kandValik">
 				Nr
-				<h4>Nimi</h4>
+				<h4 id="valitudKandNimi">Nimi</h4>
 				Erakond  
 				</div>
 				<br />
 				<br />
-				<form>
+				<form id="haaletusForm" name="haaletusForm" method="POST" action="/haaletamine">
+					<input id="kandidaatNr" name="kandidaat" type="hidden" value=0></input>
+					<input id="haaletajaNr" name="haaletaja" type="hidden" value=0></input>
+				
 				<button class="login" type="submit">Anna oma hääl</button>
 				</form>
 				<br>
@@ -80,6 +83,6 @@
 				</div>
 			</div>
 		</div>
-	</form>
+	<!--  </form>-->
 </body>
 </html>

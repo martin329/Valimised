@@ -16,10 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 
 public class Haaletamine extends HttpServlet {
-	@Override
+	private int haaletaja;
+	private int kandidaat;
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-
+		haaletaja = Integer.parseInt(req.getParameter("haaletaja"));
+		kandidaat = Integer.parseInt(req.getParameter("kandidaat"));
 		Connection c = null;
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
@@ -29,8 +31,8 @@ public class Haaletamine extends HttpServlet {
 			String statement = "INSERT INTO haal(haaletaja,kandidaat,aeg) VALUES(? , ? , ?)";
 			PreparedStatement stmt = c.prepareStatement(statement);
 			
-			stmt.setLong(1, 20);
-			stmt.setLong(2, 3);
+			stmt.setLong(1, haaletaja);
+			stmt.setLong(2, kandidaat);
 			java.util.Date date= new java.util.Date();
 			stmt.setTimestamp(3, new Timestamp(date.getTime()));
 
