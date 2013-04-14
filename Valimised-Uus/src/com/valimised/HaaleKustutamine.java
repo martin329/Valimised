@@ -24,11 +24,13 @@ public class HaaleKustutamine extends HttpServlet {
 		Connection c = null;
 		try {
 			
+			
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager.getConnection(
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
-			String statement = "DELETE FROM haal WHERE haaletaja=20";
+			String kandidaatId = req.getParameter("kasutajaID");
+			String statement = "DELETE FROM haal WHERE haaletaja="+kandidaatId;
 			PreparedStatement stmt = c.prepareStatement(statement);
 
 			stmt.execute();

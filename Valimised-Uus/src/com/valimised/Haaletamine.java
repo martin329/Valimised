@@ -16,12 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 
 public class Haaletamine extends HttpServlet {
-	private int haaletaja;
-	private int kandidaat;
+	private long haaletaja;
+	private long kandidaat;
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		haaletaja = Integer.parseInt(req.getParameter("haaletaja"));
-		kandidaat = Integer.parseInt(req.getParameter("kandidaat"));
+		haaletaja = Long.parseLong(req.getParameter("haaletaja"));
+		kandidaat = Long.parseLong(req.getParameter("kandidaat"));
 		Connection c = null;
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());

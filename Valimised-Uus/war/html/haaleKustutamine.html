@@ -7,13 +7,18 @@
 </head>
 
 <body>
-	<form action="/haaleKustutamine" method="post">
+<script src="../js/haaleKustutamine.js"></script>
+	<form action="/haaleKustutamine" method="post" id="kustutaHaal">
 		<div id="sisukast">
 			<div id="pealkiri">
 				<br />
 				<br />
 				<h1>Oled juba hääletanud!</h1>
-				<br /> <button class="login" type="submit" >Kustuta oma hääl</button><br/>
+				<input id="kasutajaID" name="kasutajaID" type="hidden" value=0></input>
+<!-- 				<br /> <button class="login" type="submit" >Kustuta oma hääl</button><br/> -->
+				<input onclick="funky()" class="login"
+						value="&nbsp;&nbsp;&nbsp;&nbsp;Kustuta oma hääl"/>
+						</br>
 				<br /> <a href="menu_pohi.html" class="login">Tagasi</a><br>
 				<br>
 

@@ -30,7 +30,9 @@ public class Kandideeri_testServlet extends HttpServlet {
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
 			
-			String statement1 = "DELETE FROM kandidaat WHERE isik=20";
+			long kandidaadiId = Long.parseLong(req.getParameter("kasutajaID"));
+			
+			String statement1 = "DELETE FROM kandidaat WHERE isik="+kandidaadiId;
 			PreparedStatement pstmt1 = c.prepareStatement(statement1);
 			pstmt1.execute();
 			
@@ -40,6 +42,7 @@ public class Kandideeri_testServlet extends HttpServlet {
 
 			String erakond = req.getParameter("Erakond");
 			String piirkond = req.getParameter("Piirkond");
+			
 
 			int erakond_id;
 			String statementForErakond = "SELECT id FROM erakond WHERE nimi LIKE '"+erakond+"'";
@@ -57,7 +60,7 @@ public class Kandideeri_testServlet extends HttpServlet {
 			piirkond_id = rsForPiirkond.getInt("id");
 			
 
-			stmt.setLong(1, 20);
+			stmt.setLong(1, kandidaadiId);
 			stmt.setLong(2, erakond_id);
 			stmt.setLong(3, piirkond_id);
 			int success = 2;

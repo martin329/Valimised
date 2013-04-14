@@ -1,59 +1,55 @@
-﻿﻿<!DOCTYPE HTML>
+﻿﻿
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Põhivaade</title>
 <link href="../css/css.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
-<link rel="stylesheet" href="../css/statistika-tabel.css" type="text/css">
-
+<link rel="stylesheet" href="../css/print.css" type="text/css"
+	media="print" />
+<link rel="stylesheet" href="../css/statistika-tabel.css"
+	type="text/css">
+<script src="../js/fblogin.js"></script>
 <script src="../js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="http://mottie.github.com/tablesorter/js/jquery.tablesorter.js"></script>
-<script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+<script type="text/javascript"
+	src="http://mottie.github.com/tablesorter/js/jquery.tablesorter.js"></script>
+<script type="text/javascript"
+	src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
 
 <!--
 <script src="../js/tablesorter.js"></script>
   -->
+
 <script src="../js/jsFile.js"></script>
 <script src="../js/otsing.js"></script>
+
 
 </head>
 
 
 <body>
-	<div id="header">
-		Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel
-	</div>
+	
+	<div id="header">Antud rakendus ei ole mõeldud kasutamiseks
+		reaalsetel valimistel</div>
 	<div id="sisukast_pohivaade">
-    	<div id="vasak_konteiner">
-        	<h1>E-Valimised</h1>
-            
-            <div id="statistika">
-            	<button id="erakond_vaade_nupp" class="login_nupud">Hääletustulemused erakondade järgi</button><br /><br />
-                <button id="kandidaadid_vaade_nupp" class="login_nupud">Hääletustulemused kanditaatide järgi</button>
-            </div>
-            
-            <!--Erinev võrreldes autentimata kasutajana-->
-            <div id="logimise_konteiner">
-            	<div id="haaleta">
-                	<a href="kandidaadiksLisamine.html" class="login_nupud">Lisa end kandidaadiks</a><br />	<br />
-                	
-                	<form action="/checkIfCanVote" method="get">
-                	<button class="login_nupud" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-<!--                     <a type="submit" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br /><br /> -->
-                    </form>
-                    <div id="auth_ala">
-                		Oled tuvastatud kui:<br />
-                        Jaan Õunapuu<br /><br /><br />
-                	</div>
-                    <button id="logi_valja" class="login_nupud">Logi välja</button>
-                </div>
-            </div>
-        </div>
-        <div id="parem_konteiner">
-        	<div id="ulemine_1">
-            	Vali ringkond menüüst või kaardilt:
-				<select name="Ringkond">
+		<div id="vasak_konteiner">
+			<h1>E-Valimised</h1>
+
+			<div id="statistika">
+				<button id="erakond_vaade_nupp" class="login_nupud">Hääletustulemused
+					erakondade järgi</button>
+				<br /> <br />
+				<button id="kandidaadid_vaade_nupp" class="login_nupud">Hääletustulemused
+					kanditaatide järgi</button>
+			</div>
+
+
+			<!--Erinev võrreldes autentimata kasutajana-->
+			<div id="logimise_konteiner"></div>
+		</div>
+		<div id="parem_konteiner">
+			<div id="ulemine_1">
+				Vali ringkond menüüst või kaardilt: <select name="Ringkond">
 					<option>Kogu Eesti</option>
 					<option>Haabersti, Põhja-Tallinn, Kristiine</option>
 					<option>Kesklinna, Lasnamäe, Pirita</option>
@@ -61,63 +57,66 @@
 					<option>Harjumaa, Raplamaa</option>
 					<option>Läänemaa, Hiiumaa, Saaremaa</option>
 				</select>
-            </div>
-            <div id="ulemine_2">
-            	<a href="javascript:window.print()"><img src="../images/print.png" alt="print" /></a>
-            </div>
-            <div id="ulemine_3">
-            	Ringkonnas on kokku hääli antud:&nbsp;&nbsp;3 702<br />
-				Kogu Eesti:&nbsp;&nbsp;22 237
-            </div><br /><br /><br /><br />
-            
-            <div id="alumine_1">
-            	<table class="table1">
-				<tr>
-					<th>Erakond</th>
-					<td>Reformierakond</td>
-					<td>IRL</td>
-					<td>Keskerakond</td>
-					<td>SDE</td>
-					<td>EKD</td>
-					<td>Vene Erakond Eestis</td>
-				</tr>
-				<tr>
-					<th>Häälte arv</th>
-					<td>4101</td>
-					<td>3022</td>
-					<td>1511</td>
-					<td>12952</td>
-					<td>249</td>
-					<td>402</td>
-				</tr>
-				<tr>
-					<th>&nbsp;Häälte protsent&nbsp;</th>
-					<td>18%</td>
-					<td>13%</td>
-					<td>6%</td>
-					<td>58%</td>
-					<td>2%</td>
-					<td>3%</td>
-				</tr>
+			</div>
+			<div id="ulemine_2">
+				<a href="javascript:window.print()"><img
+					src="../images/print.png" alt="print" /></a>
+			</div>
+			<div id="ulemine_3">
+				Ringkonnas on kokku hääli antud:&nbsp;&nbsp;3 702<br /> Kogu
+				Eesti:&nbsp;&nbsp;22 237
+			</div>
+			<br /> <br /> <br /> <br />
+
+			<div id="alumine_1">
+				<table class="table1">
+					<tr>
+						<th>Erakond</th>
+						<td>Reformierakond</td>
+						<td>IRL</td>
+						<td>Keskerakond</td>
+						<td>SDE</td>
+						<td>EKD</td>
+						<td>Vene Erakond Eestis</td>
+					</tr>
+					<tr>
+						<th>Häälte arv</th>
+						<td>4101</td>
+						<td>3022</td>
+						<td>1511</td>
+						<td>12952</td>
+						<td>249</td>
+						<td>402</td>
+					</tr>
+					<tr>
+						<th>&nbsp;Häälte protsent&nbsp;</th>
+						<td>18%</td>
+						<td>13%</td>
+						<td>6%</td>
+						<td>58%</td>
+						<td>2%</td>
+						<td>3%</td>
+					</tr>
 				</table>
-            </div>
-            
-            <div id="sektor">
-            	<img src="../images/pie.png" alt="Statistika" />
-            </div>
-            
-            <div id="kaart">
-            	<img src="../images/map.png" alt="Statistika" />
-            </div>
-        </div>
-        
-    </div>
-    
+			</div>
+
+			<div id="sektor">
+				<img src="../images/pie.png" alt="Statistika" />
+			</div>
+
+			<div id="kaart">
+				<img src="../images/map.png" alt="Statistika" />
+			</div>
+		</div>
+
+	</div>
 </body>
 <div id="footer">
-		Rakenduses realiseeritud e-valimiste näide on realiseeritud
-		tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete
-		e-valimiste korraldamiseks. Kokkulangevused reaalse e-valimiste
-		protsessiga on juhuslikud
-</footer>
+	Rakenduses realiseeritud e-valimiste näide on realiseeritud
+	tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete
+	e-valimiste korraldamiseks. Kokkulangevused reaalse e-valimiste
+	protsessiga on juhuslikud
+
+	</footer>
 </html>
+

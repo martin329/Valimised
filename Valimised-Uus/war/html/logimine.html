@@ -3,30 +3,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Logimine</title>
+<script src="../js/jsFile.js"></script>
+<script src="../js/fblogin.js"></script>
 </head>
 <body>
 	<div id="autentimata">
 		<div id="auth_ala_tuvastamata">
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>Kasutad tuvastamata rakendust</p>
-			<br />
+			<p>
+				Kasutad tuvastamata rakendust<br /> Sisse logides saate lisaks
+				hääletada, antud häält kustutada ning ennast kandidaadiks
+				registreerida<br /> Sisenemiseks on vajalik Facebooki konto
+			</p>
 		</div>
-		<a href="fblogin.html" class="login_nupud">Logi sisse</a>
+		<div id="fb-root"></div>
+		<button class="login_nupud" onclick="login(); return false;">Logi
+			sisse</button>
+		<!-- 		<a href="fblogin.html" class="login_nupud">Logi sisse</a> -->
 	</div>
 	<div id="autenditud">
 		<div id="haaleta">
 			<a href="kandidaadiksLisamine.html" class="login_nupud">Lisa end
 				kandidaadiks</a><br /> <br />
-			
-				<a type="submit" class="login_nupud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääletan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br />
-				<br />
+			<form action="/checkIfCanVote" method="get">
+				<button class="login_nupud" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hääleta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<input id="kasutajaId2" name="kasutajaId2" type="hidden" value=0></input>
+			</form>
 			<div id="auth_ala">
-				Oled tuvastatud kui:<br /> Jaan Õunapuu<br />
-				<br />
-				<br />
+				Olete tuvastatud kui:
+				<div id="kasutaja">
+					<br />
+					<br /> <br />
+				</div>
+				<form action="/checkIfInIsik" method="post" id="checkIfInIsik">
+				
+				<input id="kasutajaId" name="kasutajaId" type="hidden" value=0></input>
+				<input id="kasutajaE" name="kasutajaE" type="hidden" value=0></input>
+				<input id="kasutajaP" name="kasutajaP" type="hidden" value=0></input>
+				</form>
 			</div>
-			<button class="login_nupud" id="logi_valja">Logi välja</button>
+			</form>
+			
+			<div id="fb-root"></div>
+			<button class="login_nupud" id="fb-logout"
+				onclick="logout(); return false">Logi välja</button>
 		</div>
 	</div>
 </body>

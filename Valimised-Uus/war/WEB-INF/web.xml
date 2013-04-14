@@ -55,6 +55,14 @@
 		<url-pattern>/checkIfCanVote</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>checkIfInIsik</servlet-name>
+		<servlet-class>com.valimised.CheckIfInIsik</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkIfInIsik</servlet-name>
+		<url-pattern>/checkIfInIsik</url-pattern>
+	</servlet-mapping>
+	<servlet>
     	<servlet-name>suggestKeywordServlet</servlet-name>
     	<servlet-class>com.valimised.SuggestKeywordServlet</servlet-class>
     </servlet>

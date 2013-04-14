@@ -17,7 +17,7 @@ $(document).ready(function(){
 		+'</div>';
         $("#kandValik").replaceWith(asendus);
         $("#kandidaatNr").val(valitudList[0]);
-        $("#haaletajaNr").val(20);
+        $("#haaletajaNr").val(localStorage.getItem('id'));
         
     });
     $('.haaletaminePiirkondValik').change(function() {

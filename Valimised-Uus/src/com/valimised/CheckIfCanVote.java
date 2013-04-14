@@ -31,7 +31,12 @@ public class CheckIfCanVote extends HttpServlet {
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
 			stmt=c.createStatement();
-			rs = stmt.executeQuery("SELECT * FROM haal WHERE haaletaja=20");
+			String kandidaatId = req.getParameter("kasutajaId2");
+			String cmnd = "Select * FROM haal WHERE haaletaja="+kandidaatId;
+			System.out.println(cmnd);
+			rs = stmt.executeQuery(cmnd);
+			
+		
 
 			if (rs.next()) {
 				resp.setHeader("Refresh", "0; url=/html/haaleKustutamine.html");
