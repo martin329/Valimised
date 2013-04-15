@@ -1,7 +1,7 @@
 CACHE MANIFEST
 
 FALLBACK:
-*
+menu_pohi.html offline.html
 
 CACHE:
 ../css/css.css
@@ -14,11 +14,9 @@ CACHE:
 ../images/loader.gif
 ../images/print.png
 index.html
-erakond_vaade.html
 kandidaat_vaade.html
 erakond_vaade.html
 menu_pohi.html
-tuvastamata.html
 
 NETWORK:
 *
