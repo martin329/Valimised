@@ -2,6 +2,7 @@ CACHE MANIFEST
 
 FALLBACK:
 menu_pohi.html offline.html
+kandidaat_vaade.html kandidaat_vaade_offline.html
 
 CACHE:
 ../css/css.css

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html manifest="cache.appcache" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<script type="text/javascript" src="http://tablesorter.com/jquery-latest.js"></script> 
+-->
+<script type="text/javascript"
+	src="http://mottie.github.com/tablesorter/js/jquery.tablesorter.js"></script>
+<script type="text/javascript"
+	src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+
+<script src="../js/tablesorter.js"></script>
+<script type="text/javascript">
+
+
+function my_code(){
+alert(" Alert inside my_code function");
+}
+
+window.onload=my_code();
+</script>
+
+</head>
+<body>
+	<div id="kandidaat_vaade">
+		<div id="formBox">
+			<form id="searchForm">
+				<div id="ulemine_1">
+					Vali ringkond:<br /> <select id=ringkond_select name="Ringkond"
+						class=select_style>
+						<option>Kogu Eesti</option>
+						<option>Tallinna Haabersti, Põhja-Tallinna ja Kristiine
+							linnaosa</option>
+						<option>Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
+						<option>Tallinna Mustamäe ja Nõmme linnaosa</option>
+						<option>Harju- ja Raplamaa</option>
+						<option>Hiiu-, Lääne ja Saaremaa</option>
+						<option>Lääne-Virumaa</option>
+						<option>Ida-Virumaa</option>
+						<option>Järva- ja Viljandimaa</option>
+						<option>Jõgeva- ja Tartumaa</option>
+						<option>Tartu Linn</option>
+						<option>Võru-, Valga- ja Põlvamaa</option>
+						<option>Pärnumaa</option>
+					</select><br /> Vali erakond:<br /> <select id=erakond_select
+						name="Erakond" class=select_style>
+						<option>Koik</option>
+						<option>Eesti Iseseisvuspartei</option>
+						<option>Eesti Keskerakond</option>
+						<option>Eesti Konservatiivne Rahvaerakond</option>
+						<option>Eesti Reformierakond</option>
+						<option>Eesti Vabaduspartei – Põllumeeste Kogu</option>
+						<option>Eestimaa Ühendatud Vasakpartei</option>
+						<option>Erakond Eesti Kristlikud Demokraadid</option>
+						<option>Erakond Eestimaa Rohelised</option>
+						<option>Erakond Isamaa ja Res Publica Liit</option>
+						<option>Sotsiaaldemokraatlik Erakond</option>
+						<option>Üksikkandidaadid</option>
+					</select>
+				</div>
+				<div id="kandidaat_alumine_1">
+					Otsi kandidaati:<input name="Text1" type="text"
+						id="otsing_nimevali"></input> <input type="button" value="Otsi"
+						onclick=otsi()></input>
+				</div>
+			</form>
+		</div>
+		<div id="ulemine_2">
+			<a href="javascript:window.print()"><img
+				src="../images/print.png" alt="print" /></a>
+		</div>
+		<div id="ulemine_3">
+			Ringkonnas on kokku hääli antud:&nbsp;3 702<br /> Kogu
+			Eesti:&nbsp;22 237
+		</div>
+
+
+		<div id="statistika_kandidaadid">
+			<img src="../images/loader.gif" id=loaderimg></img>
+			<table id="kandidaatide-tabel" class="tablesorter">
+				<thead>
+					<tr class="tablesorter-headerRow">
+						<th data-column="0"
+							class="tablesorter-header tablesorter-headerAsc"><div
+								class="tablesorter-header-inner">Nr.</div></th>
+						<th data-column="1" class="tablesorter-header"><div
+								class="tablesorter-header-inner">Eesnimi</div></th>
+						<th data-column="2" class="tablesorter-header"><div
+								class="tablesorter-header-inner">Perekonnanimi</div></th>
+						<th data-column="3" class="tablesorter-header"><div
+								class="tablesorter-header-inner">Erakond</div></th>
+						<th data-column="4" class="tablesorter-header"><div
+								class="tablesorter-header-inner">Piirkond</div></th>
+						<th data-column="5" class="tablesorter-header"><div
+								class="tablesorter-header-inner">Hääli</div></th>
+					</tr>
+				</thead>
+				<tbody id="kandidaaditabel_keha">
+					
+				</tbody>
+			</table>
+		</div>
+		<!--
+            <div id="sektor2">
+            	<img src="../images/pie.png" alt="Statistika" />
+            </div>
+            
+            <div id="kaart2">
+            	<img src="../images/map.png" alt="Statistika" />
+            </div>-->
+	</div>
+</body>
+</html>
