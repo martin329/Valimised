@@ -258,12 +258,8 @@ PAREMPOOLNE VAADE
 /*-------------
   TABELIVAADE
 --------------*/
-#alumine_1 {
-	width:860px;
-	height:240px;
-	margin-left:20px;
-	margin-top:20px;
-}
+#kaart{margin-left:5%;margin-bottom:5%;height:600px;width:800px;max-width:100%;max-height:100%;border:1px solid #4498ef;border-radius:8px 8px 8px 8px;-webkit-border-radius:8px 8px 8px 8px;-moz-border-radius:8px 8px 8px 8px;}
+
 .table1{
 	border-style:solid;
 	border-collapse: collapse;
@@ -295,30 +291,7 @@ SEKTORDIAGRAMM JA KAART
   	-moz-border-radius: 8px 8px 8px 8px;
 	background:#fff*/
 }
-/*hiljem eemaldada..*/
-#sektor > img {
-	height:100%;
-	width:100%;
-}
-#kaart >img {
-	height:100%;
-	width:100%;
-}
-/*hiljem eemaldada..*/
-#kaart {
-	width:520px;
-	height:270px;
-	margin-top:20px;
-	margin-right:40px;
-	float:right;
-	/*margin-left:40%;
-	margin-top:30%;
-	border: 2px solid #204562; 
-  	border-radius: 8px 8px 8px 8px;
-  	-webkit-border-radius: 8px 8px 8px 8px;
-  	-moz-border-radius: 8px 8px 8px 8px;
-	background:#fff*/
-}
+
 #auth_ala_tuvastamata {
 	font-size:14px;
 	font-weight:bold;
