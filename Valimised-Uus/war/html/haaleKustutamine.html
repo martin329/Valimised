@@ -5,25 +5,20 @@
 <title>Tagasiside</title>
 <link href="../css/css.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-<script src="../js/haaleKustutamine.js"></script>
-	<form action="/haaleKustutamine" method="post" id="kustutaHaal">
-		<div id="sisukast">
-			<div id="pealkiri">
-				<br />
-				<br />
-				<h1>Oled juba hääletanud!</h1>
-				<input id="kasutajaID" name="kasutajaID" type="hidden" value=0></input>
-<!-- 				<br /> <button class="login" type="submit" >Kustuta oma hääl</button><br/> -->
-				<input onclick="funky()" class="login"
-						value="&nbsp;&nbsp;&nbsp;&nbsp;Kustuta oma hääl"/>
-						</br>
-				<br /> <a href="menu_pohi.html" class="login">Tagasi</a><br>
-				<br>
-
-			</div>
-		</div>
-	</form>
+<script src="../js/haaleKustutamine.js" type="text/javascript">
+</script>
+<form action="/haaleKustutamine" method="post" id="kustutaHaal">
+<div id="sisukast">
+<div id="pealkiri"><br>
+<br>
+<h1>Oled juba hääletanud!</h1>
+<input id="kasutajaID" name="kasutajaID" type="hidden" value="0">
+ <input onclick="funky()" class="login" value="&nbsp;&nbsp;&nbsp;&nbsp;Kustuta oma hääl"><br>
+<br>
+<a href="menu_pohi.html" class="login">Tagasi</a><br>
+<br></div>
+</div>
+</form>
 </body>
 </html>

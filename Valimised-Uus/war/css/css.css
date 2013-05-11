@@ -1,7 +1,8 @@
 @charset "utf-8";
 body {
-	background-color: #2e5e79;
-	font: "Trebuchet MS", Arial, Helvetica, sans-serif 13px/1.5;
+	background-color : #2e5e79;
+	font : "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size : 13px;
 }
 
 /*-------------------------
@@ -103,7 +104,7 @@ KÕIKIDE NUPPUDE STIILID
 	border:3px solid #204562;
 	display:inline-block;
 	color:black;
-	font-family:Trebuchet MS;
+	font-family:"Trebuchet MS";
 	font-size:18px;
 	font-weight:bold;
 	padding:13px 28px;
@@ -117,7 +118,7 @@ KÕIKIDE NUPPUDE STIILID
 	border:2px solid #204562;
 	display:inline-block;
 	color:black;
-	font-family:Trebuchet MS;
+	font-family:"Trebuchet MS";
 	font-size:13px;
 	font-weight:bold;
 	padding:4px 6px;
@@ -143,7 +144,7 @@ KÕIKIDE NUPPUDE STIILID
 	border:3px solid #204562;
 	display:inline-block;
 	color:black;
-	font-family:Trebuchet MS;
+	font-family:"Trebuchet MS";
 	font-size:13px;
 	font-weight:bold;
 	padding:10px 12px;
