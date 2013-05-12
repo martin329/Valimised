@@ -77,10 +77,6 @@ function testAPI() {
     $("#kasutajaE").val(response.first_name);
     $("#kasutajaP").val(response.last_name);
     document.getElementById("kasutaja").innerHTML = "<br />" + response.name + "<br /><br />";
-    if (localStorage.inIsik !== 1) {
-      localStorage.inIsik = 1;
-      document.getElementById("checkIfInIsik").submit();
-    }
   });
 }
 // Load the SDK Asynchronously
