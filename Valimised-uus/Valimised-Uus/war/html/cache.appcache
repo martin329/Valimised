@@ -1,0 +1,23 @@
+CACHE MANIFEST
+
+FALLBACK:
+menu_pohi.html offline.html
+kandidaat_vaade.html kandidaat_vaade_offline.html
+
+CACHE:
+../css/css.css
+../css/print.css
+../css/statistika-tabel.css
+../js/tablesorter.js
+../js/otsing_min.js
+../js/jsFile_min.js
+../js/jquery-1.9.1.js
+../images/loader.gif
+../images/print.png
+index.html
+kandidaat_vaade.html
+erakond_vaade.html
+menu_pohi.html
+
+NETWORK:
+*

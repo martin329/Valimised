@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kandideerimine</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script src="../js/jsFile_min.js" type="text/javascript">
+</script>
+</head>
+<body>
+<div id="header">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</div>
+<form action="/Kandidaadiks_lisamine" method="post" id="LisaKandidaat">
+<div id="sisukast">
+<div id="pealkiri">
+<h1>Lisa end kandidaadiks</h1>
+<br />
+<p>Valige piirkond kui soovid kandideerida:</p>
+<select id="piirkond" name="Piirkond">
+<option>Vali piirkond</option>
+<option>Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa</option>
+<option>Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
+<option>Tallinna Mustamäe ja Nõmme linnaosa</option>
+<option>Harju- ja Raplamaa</option>
+<option>Hiiu-, Lääne ja Saaremaa</option>
+<option>Lääne-Virumaa</option>
+<option>Ida-Virumaa</option>
+<option>Järva- ja Viljandimaa</option>
+<option>Jõgeva- ja Tartumaa</option>
+<option>Tartu Linn</option>
+<option>Võru-, Valga- ja Põlvamaa</option>
+<option>Pärnumaa</option>
+</select> <span id="piirkondValidator"></span>
+<p>Valige erakond, mille nimekirjas soovid kandideerida:</p>
+<select id="erakond" name="Erakond">
+<option>Vali erakond</option>
+<option>Eesti Iseseisvuspartei</option>
+<option>Eesti Keskerakond</option>
+<option>Eesti Konservatiivne Rahvaerakond</option>
+<option>Eesti Reformierakond</option>
+<option>Eesti Vabaduspartei - Põllumeeste Kogu</option>
+<option>Eestimaa Ühendatud Vasakpartei</option>
+<option>Erakond Eesti Kristlikud Demokraadid</option>
+<option>Erakond Eestimaa Rohelised</option>
+<option>Erakond Isamaa ja Res Publica Liit</option>
+<option>Sotsiaaldemokraatlik Erakond</option>
+<option>Üksikkandidaadid</option>
+</select> <span id="erakondValidator"></span><br />
+<br />
+<div id="kasutajaI"></div>
+<input id="kasutajaID" name="kasutajaID" type="hidden" value="0" />
+<div id="sends"><input onclick="validate()" class="login_nupud" value="Lisa kandidatuur" /></div>
+<br />
+<a href="menu_pohi.html" class="login_nupud">Tagasi</a></div>
+</div>
+</form>
+</body>
+</html>
