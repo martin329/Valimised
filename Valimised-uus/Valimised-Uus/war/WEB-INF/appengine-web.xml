@@ -41,7 +41,7 @@
   	</include>
   	<include path="/html/cache.appcache">
   	</include>
-    <include path="/html/*">
+    <include path="/html/*" expiration="10m">
   	</include>
   	</static-files>
 

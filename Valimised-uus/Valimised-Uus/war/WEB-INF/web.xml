@@ -70,4 +70,20 @@
     	<servlet-name>suggestKeywordServlet</servlet-name>
     	<url-pattern>/autocomplete</url-pattern>
     </servlet-mapping>
+    <servlet>
+    	<servlet-name>Piirkonnad</servlet-name>
+    	<servlet-class>com.valimised.Piirkonnad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>Piirkonnad</servlet-name>
+    	<url-pattern>/piirkonnad</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>TokenServlet</servlet-name>
+    	<servlet-class>com.valimised.TokenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>TokenServlet</servlet-name>
+    	<url-pattern>/getToken</url-pattern>
+    </servlet-mapping>
 </web-app>

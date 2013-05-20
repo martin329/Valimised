@@ -9,9 +9,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
+import javax.jdo.PersistenceManager;
 import javax.servlet.http.*;
 
+import com.google.appengine.api.channel.ChannelFailureException;
+import com.google.appengine.api.channel.ChannelMessage;
+import com.google.appengine.api.channel.ChannelService;
+import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
@@ -66,6 +72,27 @@ public class Kandideeri_testServlet extends HttpServlet {
 			int success = 2;
 			success = stmt.executeUpdate();
 			if (success == 1) {
+				String json = "[{\"id\":"+Long.toString(kandidaadiId)+", \"erakond\":"+Integer.toString(erakond_id)+", \"piirkond\":"+Integer.toString(piirkond_id)+"}]";
+				System.out.println("json: "+json);
+				// Get all channel client ids available
+				String query = "select from " + ChannelClient.class.getName();
+				PersistenceManager pm = PMF.get().getPersistenceManager();
+				List<ChannelClient> ids = (List<ChannelClient>) pm.newQuery(query).execute();
+
+
+
+				ChannelService channelService = ChannelServiceFactory.getChannelService();
+				for (ChannelClient m : ids) {
+					String client = m.getClientId();
+					try {
+						channelService.sendMessage(new ChannelMessage(client, json));
+						System.out.println("sent json stream: " + json);
+						System.out.println("to client: " + client);
+					}catch (ChannelFailureException e) {
+						e.printStackTrace();
+					}
+				}
+				pm.close();
 				// out.println("<html><head></head><body>Success! Redirecting in 3 seconds...</body></html>");
 			} else if (success == 0) {
 				// out.println("<html><head></head><body>Failure! Please try again! Redirecting in 3 seconds...</body></html>");
@@ -83,6 +110,6 @@ public class Kandideeri_testServlet extends HttpServlet {
 				} catch (SQLException ignore) {
 				}
 		}
-		resp.setHeader("Refresh", "0; url=/html/lisamiseTagasiside.html");
+		resp.setHeader("Refresh", "5; url=/html/lisamiseTagasiside.html");
 	}
 }

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 public class testServlet extends HttpServlet {
+
+		
 	private String partyName;
 	private String candidate;
 	private String region;
@@ -94,6 +96,7 @@ public class testServlet extends HttpServlet {
 			resp.setCharacterEncoding("UTF-8");
 			resp.setContentType("application/json");
 			resp.getWriter().write(json);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
