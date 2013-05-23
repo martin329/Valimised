@@ -39,10 +39,11 @@ function haaletamisOtsing(piirkond)
   var json = $.getJSON("/test", kodeeritud, function (data)
   {
     var output = "";
-    for (var i=0; i < data.kandidaadid; i++){
+    for (var i in data.kandidaadid){
       var isik = data.kandidaadid[i];
       output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi + " " + isik.perenimi + "</td><td>" + isik.erakond + "</td></tr>";
     }
+    console.log(output);
     $("#haaletusTabel_keha").empty();
     $("#haaletusTabel_keha").append(output);
     $("#haaletusTabel").trigger("update");

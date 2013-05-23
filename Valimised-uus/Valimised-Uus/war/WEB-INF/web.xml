@@ -86,4 +86,12 @@
     	<servlet-name>TokenServlet</servlet-name>
     	<url-pattern>/getToken</url-pattern>
     </servlet-mapping>
+    <servlet>
+    	<servlet-name>PushJsonServlet</servlet-name>
+    	<servlet-class>com.valimised.PushJsonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>PushJsonServlet</servlet-name>
+    	<url-pattern>/pushJson</url-pattern>
+    </servlet-mapping>
 </web-app>

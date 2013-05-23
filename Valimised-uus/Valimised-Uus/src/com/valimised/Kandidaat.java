@@ -6,6 +6,7 @@ public class Kandidaat {
 	public String erakond;
 	public String eesnimi;
 	public String perenimi;
+	public int haali;
 	
 	@Override
 	public String toString() {
@@ -15,13 +16,14 @@ public class Kandidaat {
 	}
 
 	public Kandidaat(int id, String piirkond, String erakond, String eesnimi,
-			String perenimi) {
+			String perenimi, int haali ) {
 		super();
 		this.id = id;
 		this.piirkond = piirkond;
 		this.erakond = erakond;
 		this.eesnimi = eesnimi;
 		this.perenimi = perenimi;
+		this.haali = haali;
 	}
 	
 	

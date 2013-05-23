@@ -9,11 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.jdo.PersistenceManager;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.channel.ChannelFailureException;
+import com.google.appengine.api.channel.ChannelMessage;
+import com.google.appengine.api.channel.ChannelService;
+import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 
 public class HaaleKustutamine extends HttpServlet {
@@ -29,16 +35,50 @@ public class HaaleKustutamine extends HttpServlet {
 			c = DriverManager.getConnection(
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
-			String kandidaatId = req.getParameter("kasutajaID");
-			String statement = "DELETE FROM haal WHERE haaletaja="+kandidaatId;
+			String haaletajaId = req.getParameter("kasutajaID");
+			String statement2 = "SELECT kandidaat FROM haal WHERE haaletaja="+haaletajaId;
+			PreparedStatement stmt2 = c.prepareStatement(statement2);
+			ResultSet rs=stmt2.executeQuery(statement2);
+			int kandidaat = 0;
+			if(rs.next()){
+				kandidaat = rs.getInt("kandidaat");
+			}
+			
+			String statement = "DELETE FROM haal WHERE haaletaja="+haaletajaId;
 			PreparedStatement stmt = c.prepareStatement(statement);
-
 			stmt.execute();
+			System.out.println("h‰‰l kustutatud");
+			
+			String msg = "d_" + Integer.toString(kandidaat);
+			System.out.println(msg);
+			// Get all channel client ids available
+			String query = "select from " + ChannelClient.class.getName();
+			PersistenceManager pm = PMF.get().getPersistenceManager();
+			List<ChannelClient> ids = (List<ChannelClient>) pm.newQuery(query).execute();
+
+
+
+			ChannelService channelService = ChannelServiceFactory.getChannelService();
+			for (ChannelClient m : ids) {
+				String client = m.getClientId();
+				try {
+					channelService.sendMessage(new ChannelMessage(client, msg));
+					//System.out.println("sent json stream: " + json);
+					//System.out.println("to client: " + client);
+				}catch (ChannelFailureException e) {
+					//e.printStackTrace();
+				}
+
+			}
+			System.out.println(msg);
+			pm.close();
 
 		} catch (SQLException e) {
-			// e.printStackTrace();
+			e.printStackTrace();
+			System.out.println("sqlexception");
 			resp.setHeader("Refresh", "0; url=/html/menu_pohi.html");
 		} finally {
+			System.out.println("finally");
 			resp.setHeader("Refresh", "0; url=/html/menu_pohi.html");
 		}
 	}

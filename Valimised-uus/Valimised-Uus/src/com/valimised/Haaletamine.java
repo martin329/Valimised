@@ -8,11 +8,17 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
+import javax.jdo.PersistenceManager;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.channel.ChannelFailureException;
+import com.google.appengine.api.channel.ChannelMessage;
+import com.google.appengine.api.channel.ChannelService;
+import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 
 public class Haaletamine extends HttpServlet {
@@ -37,6 +43,29 @@ public class Haaletamine extends HttpServlet {
 			stmt.setTimestamp(3, new Timestamp(date.getTime()));
 
 			stmt.execute();
+			
+			String msg = "h_" + Long.toString(kandidaat);
+			System.out.println(msg);
+			// Get all channel client ids available
+			String query = "select from " + ChannelClient.class.getName();
+			PersistenceManager pm = PMF.get().getPersistenceManager();
+			List<ChannelClient> ids = (List<ChannelClient>) pm.newQuery(query).execute();
+
+
+
+			ChannelService channelService = ChannelServiceFactory.getChannelService();
+			for (ChannelClient m : ids) {
+				String client = m.getClientId();
+				try {
+					channelService.sendMessage(new ChannelMessage(client, msg));
+					//System.out.println("sent json stream: " + json);
+					//System.out.println("to client: " + client);
+				}catch (ChannelFailureException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println(msg);
+			pm.close();
 			
 		} catch (SQLException e) {
 			resp.setHeader("Refresh",

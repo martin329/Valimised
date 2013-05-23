@@ -9,10 +9,12 @@ function otsi() {
   var i = 0;
   console.log(data);
   json = $.getJSON("/test", data, function (data) {
+	console.log(data);
     var output = "";
     for ( var i in data.kandidaadid) {
       var isik = data.kandidaadid[i];
-      output += "<tr><td>" + isik.id + "</td><td>" + isik.eesnimi + "</td><td>" + isik.perenimi + "</td><td>" + isik.erakond + "</td><td>" + isik.piirkond + "</td></tr>";
+      output += "<tr id=\""+isik.id+"\"><td>" + isik.id + "</td><td>" + isik.eesnimi + "</td><td>" + isik.perenimi + 
+      "</td><td>" + isik.erakond + "</td><td>" + isik.piirkond + "</td><td>" + isik.haali + "</td></tr>";
     }
     console.log(output);
     tabelisse(output);

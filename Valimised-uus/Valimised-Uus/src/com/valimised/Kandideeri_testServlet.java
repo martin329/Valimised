@@ -19,9 +19,7 @@ import com.google.appengine.api.channel.ChannelMessage;
 import com.google.appengine.api.channel.ChannelService;
 import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
-import com.google.appengine.api.users.User;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
+import com.google.gson.Gson;
 
 public class Kandideeri_testServlet extends HttpServlet {
 	@Override
@@ -44,7 +42,7 @@ public class Kandideeri_testServlet extends HttpServlet {
 			
 			String statement = "INSERT INTO kandidaat(isik,erakond,piirkond) VALUES(? , ? , ?)";
 			PreparedStatement stmt = c.prepareStatement(statement);
-			Statement stmt2 = c.createStatement();
+
 
 			String erakond = req.getParameter("Erakond");
 			String piirkond = req.getParameter("Piirkond");
@@ -72,8 +70,13 @@ public class Kandideeri_testServlet extends HttpServlet {
 			int success = 2;
 			success = stmt.executeUpdate();
 			if (success == 1) {
-				String json = "[{\"id\":"+Long.toString(kandidaadiId)+", \"erakond\":"+Integer.toString(erakond_id)+", \"piirkond\":"+Integer.toString(piirkond_id)+"}]";
-				System.out.println("json: "+json);
+				String kandStatement="SELECT id FROM kandidaat WHERE isik="+kandidaadiId;
+				Statement pstmtKand = c.prepareStatement(kandStatement);
+				ResultSet rsKand = pstmtKand.executeQuery(kandStatement);
+				rsKand.next();
+				int kandidaat = rsKand.getInt("id");
+				String msg = "k_" + Integer.toString(kandidaat);
+				System.out.println(msg);
 				// Get all channel client ids available
 				String query = "select from " + ChannelClient.class.getName();
 				PersistenceManager pm = PMF.get().getPersistenceManager();
@@ -85,14 +88,15 @@ public class Kandideeri_testServlet extends HttpServlet {
 				for (ChannelClient m : ids) {
 					String client = m.getClientId();
 					try {
-						channelService.sendMessage(new ChannelMessage(client, json));
-						System.out.println("sent json stream: " + json);
-						System.out.println("to client: " + client);
+						channelService.sendMessage(new ChannelMessage(client, msg));
+						//System.out.println("sent json stream: " + json);
+						//System.out.println("to client: " + client);
 					}catch (ChannelFailureException e) {
 						e.printStackTrace();
 					}
 				}
 				pm.close();
+				System.out.println(msg);
 				// out.println("<html><head></head><body>Success! Redirecting in 3 seconds...</body></html>");
 			} else if (success == 0) {
 				// out.println("<html><head></head><body>Failure! Please try again! Redirecting in 3 seconds...</body></html>");

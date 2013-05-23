@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
-public class testServlet extends HttpServlet {
+public class kandidaadidServlet extends HttpServlet {
 
 		
 	private String partyName;
@@ -43,7 +43,7 @@ public class testServlet extends HttpServlet {
 					"jdbc:google:rdbms://jjmmtvdb:jjmmtvdb/valimisedDB",
 					"root", "");
 			Statement stmt =con.createStatement();
-			String sql="SELECT kandidaat.id, eesnimi, perenimi, erakond.nimi AS erakond, piirkond.nimi as piirkond, kandidaat.haali " +
+			String sql="SELECT kandidaat.id, eesnimi, perenimi, erakond.nimi AS erakond, piirkond.nimi as piirkond, haali" +
 					"FROM kandidaat LEFT JOIN isik on kandidaat.isik=isik.id LEFT JOIN piirkond on kandidaat.piirkond=piirkond.id " +
 					"LEFT JOIN erakond ON kandidaat.erakond=erakond.id ";
 			if (piirkond_id==0){
